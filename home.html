@@ -2,9 +2,56 @@
 <html>
 <head>
 	<title></title>
+	<style>
+		
+		h1 {
+			text-align : center;
+			font-family: verdana;
+		}
+
+		ul {
+			position: ;
+			list-style-type: none;
+			margin : 0;
+			padding: 0;		
+			overflow: hidden;
+			background-color: #333;
+		}
+		li {
+			float: center;
+			display: block;
+			color: white;
+		    text-align: center;
+		    padding: 14px 16px;
+		    text-decoration: none;
+			font-family: verdana;
+		}
+
+		li:hover {
+		    background-color: #111;
+		}
+
+		.active {
+		    background-color: #4CAF50;
+		}
+
+	</style>
 </head>
 <body>
-	<p>Hello World</p>
-
+	<nav>
+		<ul>
+			<li>myBoard</li>
+		</ul> <br>
+	</nav>
+	<div> <!-- Login -->
+		<h1>Welcome to myBoard</h1>
+		<form action="/coba.html" method="post">
+			<center>
+				<p>Username <input type="Text" name="username" placeholder="username" required></p>
+				<p>Password <input type="Password" name="password" placeholder="password" required></p>
+				<input type="submit" name="login" value="Login">
+			</center>
+		</form>
+	</div>
 </body>
 </html>
