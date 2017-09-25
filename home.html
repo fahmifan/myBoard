@@ -9,16 +9,17 @@
 	<style>	
 		h1 {
 			text-align : center;
-			font-family: verdana;
+			/*font-family: 'Encode Sans Condensed', sans-serif;*/
+		}
+
+		body {
+			font-family: 'Encode Sans Condensed', sans-serif;
 		}
 
 		ul {
-			position: ;
 			list-style-type: none;
 			margin : 0;
 			padding: 0;		
-			overflow: hidden;
-			background-color: #77ff78;
 		}
 		li {
 			float: center;
@@ -27,24 +28,26 @@
 		    text-align: center;
 		    padding: 14px 16px;
 		    text-decoration: none;
-			font-family: verdana;
+			/*font-family: 'Encode Sans Condensed', sans-serif;*/
+			background-color: #009688;
 		}
 
 		li:hover {
-		    background-color: #66ff66;
+		    background-color: #26A69A;
 		}
 
 		.login {
-			padding: 200px;
+			padding: 220px;
+			background-color: #ffffff;
 		}
 		
 		.active {
-		    background-color: #4CAF50;
+		    background-color: #E0F2F1;
 		}
 
 		.alamat {
 			color : white;
-			background-color: #7fff7f;	
+			background-color: #009688;	
 			padding: 20px;		
 		}
 	</style>
@@ -52,8 +55,8 @@
 <body>
 	<nav>
 		<ul>
-			<li>myBoard</li>
-		</ul> <br>
+			<li><img src="logo-myBoard-w.png" style="width: 3%"><b> myBoard</b></li>
+		</ul>
 	</nav>
 	<div class="login"> <!-- Login -->
 		<h1>Welcome to myBoard</h1>
@@ -61,13 +64,11 @@
 			<center>
 				<p>Username <input type="Text" name="username" placeholder=" e.g. myUname" required></p>
 				<p>Password <input type="Password" name="password" placeholder="e.g. myPrivate" required></p>
-				<input type="submit" name="login" value="Login">
+				<input type="submit" name="login" value="Login" style="background-color: ">
 			</center>
-			<br>
 		</form>
 	</div> <!-- end login -->
-	<div style="background-image:url('home-image.jpg');  color: white; text-align: center; padding: 120px; background-repeat: no-repeat;
-"> <!-- Background Image -->
+	<div style="background-image:url('home-image-v2.jpg');  color: white; text-align: center; padding: 120px; background-repeat: no-repeat;"> <!-- Background Image -->
 		
 		<p style="font-size: 72px;" >Lets you work more <br>
 			collaboratively and get more done.
