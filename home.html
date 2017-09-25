@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<style>
-		
+	<title>Home</title>
+    <meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="font-awesome-4/css/font-awesome.min.css">
+	<style>	
 		h1 {
 			text-align : center;
 			font-family: verdana;
@@ -15,7 +18,7 @@
 			margin : 0;
 			padding: 0;		
 			overflow: hidden;
-			background-color: #333;
+			background-color: #77ff78;
 		}
 		li {
 			float: center;
@@ -28,13 +31,22 @@
 		}
 
 		li:hover {
-		    background-color: #111;
+		    background-color: #66ff66;
 		}
 
+		.login {
+			padding: 200px;
+		}
+		
 		.active {
 		    background-color: #4CAF50;
 		}
 
+		.alamat {
+			color : white;
+			background-color: #7fff7f;	
+			padding: 20px;		
+		}
 	</style>
 </head>
 <body>
@@ -43,15 +55,44 @@
 			<li>myBoard</li>
 		</ul> <br>
 	</nav>
-	<div> <!-- Login -->
+	<div class="login"> <!-- Login -->
 		<h1>Welcome to myBoard</h1>
 		<form action="/coba.html" method="post">
 			<center>
-				<p>Username <input type="Text" name="username" placeholder="username" required></p>
-				<p>Password <input type="Password" name="password" placeholder="password" required></p>
+				<p>Username <input type="Text" name="username" placeholder=" e.g. myUname" required></p>
+				<p>Password <input type="Password" name="password" placeholder="e.g. myPrivate" required></p>
 				<input type="submit" name="login" value="Login">
 			</center>
+			<br>
 		</form>
+	</div> <!-- end login -->
+	<div style="background-image:url('home-image.jpg');  color: white; text-align: center; padding: 120px; background-repeat: no-repeat;
+"> <!-- Background Image -->
+		
+		<p style="font-size: 72px;" >Lets you work more <br>
+			collaboratively and get more done.
+		</p>
+		<p style="font-size: 24px">
+			myBoard's boards, lists, and cards enable you to organize and prioritize <br>
+			your projects in a fun, flexible and rewarding way.
+		</p>
+	</div>
+	<div class="alamat">
+		<div class="row">
+			<div class="col-md-4">
+				<p>Contact Us</p>
+				<p>0822-xxxx-xxxx</p>
+			</div>
+			<div class="col-md-4">
+				<p><i class="fa fa-facebook-square" aria-hidden="true"></i> @myBoard</p>
+				<p><i class="fa fa-instagram" aria-hidden="true"></i> @myBoard</p>
+				<p><i class="fa fa-twitter-square" aria-hidden="true"></i> @myBoard</p>
+			</div>
+			<div class="col-md-4">
+				<p>Address: Jl. Raya Bandung Sumedang KM.21, Hegarmanah, Jatinangor, Kabupaten Sumedang, Jawa Barat 45363
+				</p>
+			</div>			
+		</div>
 	</div>
 </body>
 </html>
