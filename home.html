@@ -4,7 +4,7 @@
 	<title>Home</title>
     <meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap\css\bootstrap.css">
 	<link rel="stylesheet" href="font-awesome-4/css/font-awesome.min.css">
 	<style>	
 		h1 {
@@ -14,6 +14,14 @@
 
 		body {
 			font-family: 'Encode Sans Condensed', sans-serif;
+		}
+
+		a:visited {
+			color : white;
+		}
+		
+		a:hover {
+			text-decoration: none;
 		}
 
 		ul {
@@ -37,8 +45,13 @@
 		}
 
 		.login {
-			padding: 220px;
+			width: 100%;
+			min-height: 450px;
+			margin-top: 170px;
+			margin-bottom: 0px;
+			padding: 10px;
 			background-color: #ffffff;
+			box-sizing: border-box;
 		}
 		
 		.active {
@@ -46,53 +59,100 @@
 		}
 
 		.alamat {
+			box-sizing: border-box;
+			width: 100%;
+			min-height: 100px;
+			margin : 0px;
 			color : white;
-			background-color: #009688;	
+			background-color: #009688;
 			padding: 20px;		
+			box-sizing: border-box;
+		}
+
+		.bg-image {
+			background-image:url('home-image-v2.jpg');
+			color: white;
+			text-align: center;
+			min-height: 492px;
+
+		}
+
+		.parallax {
+		    /* The image used */
+		    background-image: url("home-image-v2.jpg");
+
+		    /* Set a specific height */
+		    min-height: 500px; 
+
+		    /* Create the parallax scrolling effect */
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
 		}
 	</style>
 </head>
 <body>
-	<nav>
-		<ul>
-			<li><img src="logo-myBoard-w.png" style="width: 3%"><b> myBoard</b></li>
-		</ul>
-	</nav>
-	<div class="login"> <!-- Login -->
-		<h1>Welcome to myBoard</h1>
-		<form action="/coba.html" method="post">
-			<center>
-				<p>Username <input type="Text" name="username" placeholder=" e.g. myUname" required></p>
-				<p>Password <input type="Password" name="password" placeholder="e.g. myPrivate" required></p>
-				<input type="submit" name="login" value="Login" style="background-color: ">
-			</center>
-		</form>
-	</div> <!-- end login -->
-	<div style="background-image:url('home-image-v2.jpg');  color: white; text-align: center; padding: 120px; background-repeat: no-repeat;"> <!-- Background Image -->
-		
-		<p style="font-size: 72px;" >Lets you work more <br>
-			collaboratively and get more done.
-		</p>
-		<p style="font-size: 24px">
-			myBoard's boards, lists, and cards enable you to organize and prioritize <br>
-			your projects in a fun, flexible and rewarding way.
-		</p>
-	</div>
-	<div class="alamat">
+	<div class="container-fluid" style="padding: 0px">
 		<div class="row">
-			<div class="col-md-4">
-				<p>Contact Us</p>
-				<p>0822-xxxx-xxxx</p>
+			<div class="col-md-12">
+				<nav>
+					<ul>
+						<li> <a href="home.html"><img src="logo-myBoard-w.png" style="width: 3%"><b> myBoard</b> </a></li>
+					</ul>
+				</nav>
 			</div>
-			<div class="col-md-4">
-				<p><i class="fa fa-facebook-square" aria-hidden="true"></i> @myBoard</p>
-				<p><i class="fa fa-instagram" aria-hidden="true"></i> @myBoard</p>
-				<p><i class="fa fa-twitter-square" aria-hidden="true"></i> @myBoard</p>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="login"> <!-- Login -->
+					<center>
+						<h1>Welcome to myBoard</h1>
+						<form action="/coba.html" method="post">						
+						<p>Username <input type="Text" name="username" placeholder=" e.g. myUname" required></p>
+						<p>Password <input type="Password" name="password" placeholder="e.g. myPrivate" required></p>
+						<input type="submit" name="login" value="Login">
+					</center>
+					</form>
+				</div> <!-- end login -->
 			</div>
-			<div class="col-md-4">
-				<p>Address: Jl. Raya Bandung Sumedang KM.21, Hegarmanah, Jatinangor, Kabupaten Sumedang, Jawa Barat 45363
-				</p>
-			</div>			
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="bg-image"> <!-- Background Image -->
+					<p style="font-size: 72px; padding: 10px; margin: 0px; padding-top: 40px" >Lets you work more <br>
+						collaboratively and get more done.
+					</p>
+					<p style="font-size: 24px; padding: 10px; margin: 0px; padding-bottom: 25px">
+						myBoard's boards, lists, and cards enable you to organize and prioritize <br>
+						your projects in a fun, flexible and rewarding way.</p><br>
+				</div> <!-- end Bg-Image -->
+			</div>
+		</div>
+		<div class="alamat">
+			<div class="row">
+				<div class="col-md-4">
+					<p>Contact Us</p>
+					<p>0822-xxxx-xxxx</p>
+				</div>
+				<div class="col-md-4">
+					<center>
+						<p><i class="fa fa-facebook-square" aria-hidden="true"></i> @myBoard</p>
+						<p><i class="fa fa-instagram" aria-hidden="true"></i> @myBoard</p>
+						<p><i class="fa fa-twitter-square" aria-hidden="true"></i> @myBoard</p>
+					</center>
+				</div>
+				<div class="col-md-4">
+					<center>
+					<p style="text-align: right;">
+						Address<br/>
+						Bandung Sumedang Avenue KM.21,<br/>
+						Hegarmanah, Jatinangor, Sumedang District,<br/>
+						Jawa Barat 45363
+					</p>
+					</center>
+				</div>			
+			</div>
 		</div>
 	</div>
 </body>
