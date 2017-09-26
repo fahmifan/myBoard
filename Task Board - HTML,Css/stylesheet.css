@@ -176,9 +176,10 @@
 		}
 
 		body {
-			background-image: url("bck.jpg");
+			background-size: 100%;
 			background-position: fixed;
 			background-repeat: no-repeat;
+			background-color: #c04848;
 		}
 
 
@@ -189,7 +190,7 @@
 			padding: 10px;		
 			height: 50px;
 			overflow: hidden;
-			background-color: #77ff78;
+			background-color: #f07241;
 		}
 		li {
 			float: center;
@@ -208,7 +209,7 @@
 		}
 		.alamat {
 			color : white;
-			background-color: #7fff7f;	
+			background-color: #601848;	
 			padding: 20px;		
 		}
 		.footer1{
