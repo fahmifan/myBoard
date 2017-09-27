@@ -1,0 +1,64 @@
+.topnav {
+    background-color: #A4FF72;
+    overflow: hidden;
+    /*position: fixed;*/
+    width: 100%;
+    margin: 0 0 20px 0 !important;
+}
+
+.topnav span {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    margin: 0 0 0 0;
+    text-decoration: none;
+    font-size: 17px;
+}	
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+body {
+	background-color: white;
+	margin: 0 0 0 0;
+}
+
+.list {
+	background-color: blue;
+	float: left;
+	width: 300px;
+	height: 450px;
+	margin-left: 20px;
+	margin-right: 20px;
+	border-radius: 20px;
+}
+
+.card {
+	margin: 20px;
+	background-color: green;
+	width: 260px;
+	height: 70px;
+	border-radius: 10px;
+}
+
+.namaCard {
+	padding: 10px;
+}
+
+.namaBoard {
+	margin: 0px 0px 0px 20px;
+	color: teal;
+	font-size: 30px;
+}
+
+.namaList{
+	margin: 20px 0 0 20px;
+}
