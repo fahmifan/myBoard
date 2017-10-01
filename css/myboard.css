@@ -1,9 +1,16 @@
+body {
+	background-color: white;
+	margin: 0 0 0 0;
+	font-family: 'Encode Sans Condensed', sans-serif;
+}
+
 .topnav {
-    background-color: #A4FF72;
+    background-color: #009688;
     overflow: hidden;
     /*position: fixed;*/
     width: 100%;
     margin: 0 0 20px 0 !important;
+    height: 52px;
 }
 
 .topnav span {
@@ -26,19 +33,25 @@
     color: white;
 }
 
-body {
-	background-color: white;
-	margin: 0 0 0 0;
+.boardbox {
+	width: 100%;
+	min-height: 450px;
+	margin-top: 50px;
+	margin-bottom: 0px;
+	margin-left: 150px;
+	padding: 10px;
+	background-color: #ffffff;
+	box-sizing: border-box;
+	text-align: center;
 }
 
-.list {
-	background-color: blue;
-	float: left;
-	width: 300px;
-	height: 450px;
-	margin-left: 20px;
-	margin-right: 20px;
-	border-radius: 20px;
+.board {
+	background-color: #e2e4e6;
+	display: inline-block;
+	border-radius: 10px;
+	padding: 20px 20px 20px 20px;
+	margin-top: 10px;
+	margin-left: 10px;
 }
 
 .card {
@@ -61,4 +74,43 @@ body {
 
 .namaList{
 	margin: 20px 0 0 20px;
+}
+
+a:visited {
+	color : white;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+ul {
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #009688;	
+    height: 51px;
+}
+
+li {
+	float: left;
+	display: inline;
+	color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+	/*font-family: 'Encode Sans Condensed', sans-serif;*/
+	background-color: #009688;
+}
+
+li:hover {
+    background-color: #26A69A;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
 }
