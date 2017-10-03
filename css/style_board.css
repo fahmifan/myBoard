@@ -7,9 +7,10 @@ body {
 .topnav {
     background-color: #009688;
     overflow: hidden;
-    /*position: fixed;*/
+    position: relative;
     width: 100%;
-    margin: 0 0 20px 0 !important;
+    /*margin: 0 0 20px 0 !important;*/
+    margin: auto;
     height: 52px;
 }
 
@@ -91,6 +92,15 @@ ul {
     overflow: hidden;
     background-color: #009688;	
     height: 51px;
+}
+
+.logo-board {
+	position: absolute;
+	box-sizing: border-box;
+	width: 1190px;
+	margin: auto;
+	right: 75px;
+	left: 76;
 }
 
 li {
