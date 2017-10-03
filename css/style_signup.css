@@ -16,7 +16,7 @@ a:hover {
 }
 
 a:active {
-	color: unset;
+	color: usnet;
 }
 
 ul {
@@ -24,7 +24,6 @@ ul {
 	margin : 0;
 	padding: 0;		
 }
-
 li {
 	float: center;
 	display: block;
@@ -40,21 +39,24 @@ li:hover {
     background-color: #26A69A;
 }
 
-.login {
-	width: 100%;
-	min-height: 450px;
-	margin-top: 170px;
-	margin-bottom: 0px;
-	padding: 10px;
-	background-color: #ffffff;
+.signup {
 	box-sizing: border-box;
-}
-
-.login-button {
+	width: 250px;
+	min-height: 200px;
+	left: -8px;
 	margin: auto;
 	position: relative;
-	width: 122px;
-	left: 60px;
+	top: 100px;
+	/*height: 450px*/
+}
+.signup-button {
+	position: relative; 
+	left: 108px; 
+	margin-bottom: 10px;
+}
+
+.signup-input {
+
 }
 
 .active {
@@ -64,16 +66,10 @@ li:hover {
 .alamat {
 	box-sizing: border-box;
 	width: 100%;
+	position: absolute;
+	bottom: 0px;
 	min-height: 100px;
-	margin : 0px;
 	color : white;
 	background-color: #009688;
-	padding: 20px;		
-}
-
-.bg-image {
-	color: white;
-	text-align: center;
-	min-height: 492px;
-
+	padding: 20px;
 }

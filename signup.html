@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Home</title>
+	<title>Signup</title>
     <meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="bootstrap\css\bootstrap.css">
 	<link rel="stylesheet" href="font-awesome-4/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css\style_index.css">
+	<link rel="stylesheet" href="css\style_signup.css">
 </head>
 <body>
 	<div class="container-fluid" style="padding: 0px">
@@ -19,34 +19,30 @@
 				</nav>	<!-- end navbar -->
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<div class="login"> <!-- Login -->
-					<center>
-						<h1>Welcome to myBoard</h1>
-						<form action="/coba.html" method="post">						
-						<p>Username <input type="Text" name="username" placeholder=" e.g. myUname" ></p>
-						<p>Password <input type="Password" name="password" placeholder="e.g. myPrivate" ></p>
-					</center>
-					<div class="login-button">
-						<input type="submit" name="login" value="Login">
-					<a href="signup.html"><button>Sign Up</button></a>
+		<div class="signup">
+			<div class="row"> <!-- Signup form -->
+				<h1 style="text-align: center;">Sign Up</h1>
+					<div class="col-md-6">
+						<p>Name</p>
+						<p>Username</p>
+						<p>Password</p>
 					</div>
-				</div> <!-- end login -->
+					<div class="col-md-6" style="position: relative; top: 10px; left: -50px">
+					<form style="margin-bottom: 10px">
+						<span class="signup-input"><input type="Text" name="name"></span>
+					</form>
+					<form style="margin-bottom: 10px">
+						<input type="Text" name="username">
+					</form>
+					<form style="margin-bottom: 10px">
+						<input type="Password" name="password">
+					</form>
+					<form style="margin-bottom: 10px">
+						<input type="submit" value="Sign Up" method="post" class="signup-button">
+					</form>
+					</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<div class="bg-image" style="background-image: url(img/home-image-v2.jpg);"> <!-- Background Image -->
-					<p style="font-size: 72px; padding: 10px; margin: 0px; padding-top: 40px" >Lets you work more <br>
-						collaboratively and get more done.
-					</p>
-					<p style="font-size: 24px; padding: 10px; margin: 0px; padding-bottom: 25px">
-						myBoard's boards, lists, and cards enable you to organize and prioritize <br>
-						your projects in a fun, flexible and rewarding way.</p><br>
-				</div> <!-- end Bg-Image -->
-			</div>
-		</div>
+		</div>	<!-- end signup form -->
 		<div class="alamat">
 			<div class="row">
 				<div class="col-md-4">
