@@ -153,3 +153,8 @@ li {
 	overflow-y: scroll;
 
 }
+
+.navbut {
+	text-decoration: none;
+	color: #009688;
+}

@@ -4,55 +4,18 @@ body {
 	font-family: 'Encode Sans Condensed', sans-serif;
 }
 
-.topnav {
-    background-color: #009688;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    /*margin: 0 0 20px 0 !important;*/
-    margin: auto;
-    height: 52px;
-}
-
-.topnav span {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    margin: 0 0 0 0;
-    text-decoration: none;
-    font-size: 17px;
-}	
-
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-.topnav a.active {
-    background-color: #4CAF50;
-    color: white;
-}
-
-.boardbox {
-	width: 100%;
-	min-height: 450px;
-	margin-top: 50px;
-	margin-bottom: 0px;
-	margin-left: 150px;
-	padding: 10px;
-	background-color: #ffffff;
-	box-sizing: border-box;
-	text-align: center;
+.navbut {
+	text-decoration: none;
+	color: white;
 }
 
 .board {
 	background-color: #e2e4e6;
 	display: inline-block;
 	border-radius: 10px;
-	padding: 20px 20px 20px 20px;
-	margin-top: 10px;
-	margin-left: 10px;
+	padding: 15px 15px 15px 15px;
+	width: 30%;
+	margin: 0 auto;
 }
 
 .card {
