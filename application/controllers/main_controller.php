@@ -29,4 +29,10 @@ class Main_controller extends CI_Controller {
 		$this->load->view('signup');
 		$this->load->view('footer');	
 	}
+
+	public function board() {
+		$this->load->view('header');
+		$this->load->view('board');
+
+	}
 }
