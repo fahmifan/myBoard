@@ -1,0 +1,160 @@
+a:link {
+	text-decoration: none;
+}
+
+.purple {
+	display: block;
+	background-color: #c377e0;
+	border-radius: 3px;
+    height: 8px;
+    margin: 0 3px 3px 0;
+    padding: 0;
+    width: 42px;
+    line-height: 75pt;
+}
+
+.limegreen {
+	display: block;
+	background-color: #51e898;
+	border-radius: 3px;
+    height: 8px;
+    margin: 0 3px 3px 0;
+    padding: 0;
+    width: 42px;
+    line-height: 75pt;
+}
+
+.pink {
+	display: block;
+	background-color: #ff80ce;
+	border-radius: 3px;
+    height: 8px;
+    margin: 0 3px 3px 0;
+    padding: 0;
+    width: 42px;
+    line-height: 75pt;
+}
+
+.lightblue {
+	display: block;
+	background-color: #00c2e0;
+	border-radius: 3px;
+    height: 8px;
+    margin: 0 3px 3px 0;
+    padding: 0;
+    width: 42px;
+    line-height: 75pt;
+}
+
+.orange {
+	display: block;
+	background-color: #ffab4a;
+	border-radius: 3px;
+    height: 8px;
+    margin: 0 3px 3px 0;
+    padding: 0;
+    width: 42px;
+    line-height: 75pt;
+}
+
+.center-logo {
+	text-align:center;
+}
+
+.row-nav {
+	padding:10px;
+}
+
+.board-menu {
+	border:5px solid black;
+	background-opacity: 0.4;
+    filter: alpha(opacity=40);
+}
+
+ul {
+	list-style: none;
+}
+
+ul li {
+	display:inline;
+	float:left;
+	font: 14px Arial,Helvetica,sans-serif;
+	font-size: 13px
+    line-height: 35px;
+	color:#f6f6f6;
+	background-opacity: 0.4;
+}
+
+.board-data {
+	border:1px solid #e2e4e6;
+	background-color: #e2e4e6;
+	padding:7px;
+}
+
+.board-data div p {
+	padding: 10px;
+	margin-top:5px;
+	background-color:#fff;
+	border:1px solid #ccc;
+	border-radius: 3px;
+	color:#4d4d4d;
+	font: 14px Arial,Helvetica,sans-serif;
+
+}
+
+div p img {
+	width:100%;
+}
+
+body {
+	background-size: 100%;
+	background-position: fixed;
+	background-repeat: no-repeat;
+	background-color: #009688;
+}
+
+
+ul {
+	position: ;
+	list-style-type: none;
+	margin : 0;
+	padding: 10px;		
+	height: 50px;
+	overflow: hidden;
+	background-color: #e2e4e6;
+}
+li {
+	float: center;
+	display: block;
+	color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+	font-family: verdana;
+}
+
+.container-card {
+	display: inline-block;
+    display: -webkit-box;
+	width: 100%;
+	overflow-x: scroll;
+	margin-bottom: 0px;
+}
+
+.card {
+	width: 300px;
+	/*max-height: 300px;*/
+	position: relative;
+	padding: 10px;
+}
+
+.card-scroll-y {
+	max-height: 543px;
+	overflow-y: scroll;
+
+}
+
+.navbut {
+	text-decoration: none;
+	color: #009688;
+}
