@@ -20,6 +20,7 @@ class Main_controller extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('home');
+		$this->load->view('header_list');
+		$this->load->view('list');
 	}
 }
