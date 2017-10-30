@@ -4,21 +4,12 @@
 	<title>Signup</title>
     <meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css\bootstrap\bootstrap-grid.min.css">
-	<link rel="stylesheet" href="css\font-awesome-4\font-awesome.min.css">
-	<link rel="stylesheet" href="css\style_signup.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome-4/font-awesome.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style_signup.css">
 </head>
 <body>
 	<div class="container-fluid" style="padding: 0px">
-		<div class="row">
-			<div class="col-md-12">
-				<nav>	<!-- navbar -->
-					<ul>
-						<li> <a href="index.html"><img src="image/logo-myBoard-w.png" style="width: 3%"><b> myBoard</b> </a></li>
-					</ul>
-				</nav>	<!-- end navbar -->
-			</div>
-		</div>
 		<div class="signup">
 			<div class="row"> <!-- Signup form -->
 				<h1 style="text-align: center;">Sign Up</h1>

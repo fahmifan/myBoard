@@ -20,6 +20,13 @@ class Main_controller extends CI_Controller {
 	 */
 	public function index()
 	{
+		$this->load->view('templates/header_home_signup');
 		$this->load->view('home');
+	}
+
+	public function signup()
+	{
+		$this->load->view('templates/header_home_signup');
+		$this->load->view('signup');	
 	}
 }
