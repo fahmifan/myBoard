@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<?php header('Control-Allow-Origin'); ?>
 	<title>Home</title>
     <meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap/bootstrap-grid.min.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome-4/font-awesome.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome-4/css/font-awesome.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style_index.css">
 </head>
 <body>

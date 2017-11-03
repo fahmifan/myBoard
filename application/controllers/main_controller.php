@@ -22,7 +22,11 @@ class Main_controller extends CI_Controller {
 	{
 		$this->load->view('templates/header_home_signup');
 		$this->load->view('home');
-		$this->load->view('header_list');
+	}
+
+	public function list() 
+	{
+		$this->load->view('templates/header_list');
 		$this->load->view('list');
 	}
 
