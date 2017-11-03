@@ -5,8 +5,7 @@
     <meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap/bootstrap-grid.min.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome-4/css/font-awesome.min.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style_index.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome-4/font-awesome.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style_signup.css">
 </head>
 <body>
@@ -35,6 +34,31 @@
 					</div>
 			</div>
 		</div>	<!-- end signup form -->
+		<div class="alamat">
+			<div class="row">
+				<div class="col-md-4">
+					<p>Contact Us</p>
+					<p>0822-xxxx-xxxx</p>
+				</div>
+				<div class="col-md-4">
+					<center>
+						<p><i class="fa fa-facebook-square" aria-hidden="true"></i> @myBoard</p>
+						<p><i class="fa fa-instagram" aria-hidden="true"></i> @myBoard</p>
+						<p><i class="fa fa-twitter-square" aria-hidden="true"></i> @myBoard</p>
+					</center>
+				</div>
+				<div class="col-md-4">
+					<center>
+					<p style="text-align: right;">
+						Address<br/>
+						Bandung Sumedang Avenue KM.21,<br/>
+						Hegarmanah, Jatinangor, Sumedang District,<br/>
+						Jawa Barat 45363
+					</p>
+					</center>
+				</div>			
+			</div>
+		</div>
 	</div>
 </body>
 </html>

@@ -5,28 +5,12 @@
 		<title></title>
 		<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<link rel="stylesheet" href="css\bootstrap\bootstrap-grid.min.css">
-			<link rel="stylesheet" href="css/style_list.css">
-			<link rel="stylesheet" href="css/style_modal.css">
+			<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap/bootstrap-grid.min.css">
+			<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style_list.css">
+			<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style_modal.css">
 	</head>
 	<body>
-		<nav>
-			<ul>
-				<div class="row">
-				<div class="col-sm-3">
-					<span class="navbut" style="float: left; padding-top: 5px;">
-    					Hello, username
-    				</span>
-    			</div>
-    			<div class="col-sm-6 center-logo">
-                    <img src="image/logo.png" width="50px">
-    			</div>
-    			<div class="col-sm-3 Right-Nav">
-    				<a class="navbut" href="board.html" style="float: right; padding: 5px 10px 0 0;">Board</a>
-                </div>
-    			</div>
-			</ul>
-		</nav>
+		
 
 		<div class="container-card">
 		    <div class="card">
@@ -244,7 +228,6 @@
 				}
 			}
 			
-			</script>
-			
+			</script>		
 	</body>
 </html>

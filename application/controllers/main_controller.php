@@ -24,15 +24,21 @@ class Main_controller extends CI_Controller {
 		$this->load->view('footer');
 	}
 
-	public function signup() {
-		$this->load->view('header');
-		$this->load->view('signup');
-		$this->load->view('footer');	
-	}
-
 	public function board() {
 		$this->load->view('header');
 		$this->load->view('board');
+		$this->load->view('footer');
+	}
 
+	public function list() 
+	{
+		$this->load->view('templates/header_list');
+		$this->load->view('list');
+	}
+
+	public function signup()
+	{
+		$this->load->view('templates/header_home_signup');
+		$this->load->view('signup');	
 	}
 }
