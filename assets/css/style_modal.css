@@ -1,9 +1,7 @@
-
 .board-height {
-    height: 437px;
+    height: 382px;
     color: white;
 }
-
 
 .modal {
     display: none; /* Hidden by default */

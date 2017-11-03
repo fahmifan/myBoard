@@ -16,21 +16,21 @@
 			<div class="row">
 				<div class="col-md-12" style="margin: 20;">
 					<a href="<?php echo base_url('index.php/main_controller/list')?>">
-						<div class="col-md-4 box" style="margin: 5px 5px 5px 5px">
+						<div class="col-md-4 box" style="margin: 5px">
 							Board1
 						</div>
 					</a>
-					<div class="col-md-4 box" style="margin: 5px 5px 5px 5px">
+					<div class="col-md-4 box" style="margin: 5px">
 						Board2
 					</div>
-					<div class="col-md-4 box" style="margin: 5px 5px 5px 5px">
+					<div class="col-md-4 box" style="margin: 5px">
 						Board3
 					</div>
-					<div class="col-md-4 box" style="margin: 5px 5px 5px 5px">
+					<div class="col-md-4 box" style="margin: 5px">
 						Board4
 					</div>
 					<a id="myBtn" href="#">
-						<div class="col-md-4 box" style="margin: 5px 5px 5px 5px">
+						<div class="col-md-4 box" style="margin: 5px">
 							New Board..
 						</div>
 					</a>
