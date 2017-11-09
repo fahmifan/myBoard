@@ -21,8 +21,7 @@ class Main_controller extends CI_Controller {
 				if( $this->user->login($user, $pass) ) {
 					
 					$_SESSION['user'] = $user;
-					// echo $_SESSION['user'];
-					// print_r($result->fetch_assoc());
+					
 					$this->board();
 				
 				}
