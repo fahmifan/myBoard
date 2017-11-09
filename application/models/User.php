@@ -9,11 +9,13 @@ class User extends CI_Model {
 	public function login($username, $pass)
 	{
 
-		$query  = "SELECT username, password 
+		$query  = "SELECT username, pass 
 					FROM user 
 					WHERE username = '$username' 
-					AND password = sha1('$password') ";
+					AND pass = sha1('$pass') ";
+
 		$result = $this->db->query($query);
+
 		return $result;		
 	}
 

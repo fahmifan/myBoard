@@ -16,7 +16,7 @@
 				<div class="login"> <!-- Login -->
 					<center>
 						<h1>Welcome to myBoard</h1>
-				<form action="/coba.html" method="post">
+				<form action="login" method="post">
 							<p>Username <input type="Text" name="username" placeholder=" e.g. myUname" ></p>
 							<p>Password <input type="Password" name="password" placeholder="e.g. myPrivate" ></p>
 					</center>
