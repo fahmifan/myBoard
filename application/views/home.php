@@ -16,15 +16,17 @@
 				<div class="login"> <!-- Login -->
 					<center>
 						<h1>Welcome to myBoard</h1>
-				<form action="login" method="post">
-							<p>Username <input type="Text" name="username" placeholder=" e.g. myUname" ></p>
+						<form action="login" method="post">
+							<p>Username <input type="Text" name="username" placeholder=" e.g. myUname" > </p>
 							<p>Password <input type="Password" name="password" placeholder="e.g. myPrivate" ></p>
 					</center>
 					<div class="login-button">
 						<input type="submit" name="login" value="Login">
-				</form>
-					<a href="<?php echo base_url('index.php/main_controller/signup')?>"><button>Sign Up</button></a>
+						<a href="<?php echo base_url('index.php/main_controller/signup')?>"><button>Sign Up</button></a>
 					</div>
+				</form>
+				<br>
+				<center>*<?= $error; ?></center>
 				</div> <!-- end login -->
 			</div>
 		</div>

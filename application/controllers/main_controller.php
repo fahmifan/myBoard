@@ -27,13 +27,19 @@ class Main_controller extends CI_Controller {
 
 		$response = $this->user->login($user, $pass);
 		if( $response == false ) {
+			$this->index();
 			echo "Maaf ada kesalahan";			
 			return;
 		}
 
 		if( $response->num_rows() != 1 ) {
-			echo "Username atau password tidak ditemukan";
-			// print_r($response->result_array());
+			
+			$data['error'] =  "Username atau password tidak ditemukan";
+			
+			$this->load->view('header');
+			$this->load->view('home', $data);
+			$this->load->view('footer');
+
 			return;
 		}
 
