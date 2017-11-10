@@ -10,14 +10,11 @@ class User extends CI_Model {
 	{
 
 		$query  = "SELECT username, pass 
-					FROM user 
-					WHERE username = '$username' 
-					AND pass = sha1('$pass') ";
+				FROM user 
+				WHERE username = ". $this->db->escape($username) .
+				" AND  pass = sha1(" . $this->db->escape($pass) . ")" ;
 
-		$result = $this->db->query($query);
-
-		return $result;		
+		if( $result = $this->db->query($query) ) return $result;	
+		else return false;
 	}
-
-
 }
