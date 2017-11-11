@@ -55,18 +55,23 @@ class Main_controller extends CI_Controller {
 
 	public function index() 
 	{
-		$this->data['error'] = '';
+		if( !isset( $_SESSION['user']) ) {
 
-		$this->load->view('header');
-		$this->load->view('home', $this->data);
-		$this->load->view('footer');
+			$this->data['error'] = '';
+
+			$this->load->view('header');
+			$this->load->view('home', $this->data);
+			$this->load->view('footer');
+			return;
+		}
+		redirect(base_url('index.php/main_controller/board'));
 	}
 
 	public function board() {
 
 		// echo $_SESSION['user'];
 		if( !isset( $_SESSION['user']) ) {
-			redirect('main_controller');
+			redirect(base_url('index.php/main_controller/'));		
 		}
 
 		$this->load->view('header');
