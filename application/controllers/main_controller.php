@@ -15,7 +15,7 @@ class Main_controller extends CI_Controller {
 	{
 		session_start();
 		if( !isset($_POST['login']) ) {
-			header('Location: index');
+			redirect('main_controller');
 			return;
 		}
 			
@@ -65,20 +65,22 @@ class Main_controller extends CI_Controller {
 	public function board() {
 
 		// echo $_SESSION['user'];
-		if( isset( $_SESSION['user']) ) {
+		if( !isset( $_SESSION['user']) ) {
+			redirect('main_controller');
+		}
 
-			$this->load->view('header');
-			$this->load->view('board');
-			$this->load->view('footer');
-			
-		}
-		else {
-			$this->index();
-		}
+		$this->load->view('header');
+		$this->load->view('board');
+		$this->load->view('footer');
+
 	}
 
 	public function list() 
 	{
+		if( !isset( $_SESSION['user']) ) {
+			redirect('main_controller');
+		}
+		
 		$this->load->view('templates/header_list');
 		$this->load->view('list');
 	}
