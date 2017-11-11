@@ -10,6 +10,7 @@ class Main_controller extends CI_Controller {
 		parent::__construct();
 		$this->load->model('user');
 		session_start();
+		$this->data['error'] = '';
 	}
 	
 	public function login()
@@ -57,8 +58,6 @@ class Main_controller extends CI_Controller {
 	{
 		if( !isset( $_SESSION['user']) ) {
 
-			$this->data['error'] = '';
-
 			$this->load->view('header');
 			$this->load->view('home', $this->data);
 			$this->load->view('footer');
@@ -69,7 +68,6 @@ class Main_controller extends CI_Controller {
 
 	public function board() {
 
-		// echo $_SESSION['user'];
 		if( !isset( $_SESSION['user']) ) {
 			redirect(base_url('index.php/main_controller/'));		
 		}
@@ -92,7 +90,27 @@ class Main_controller extends CI_Controller {
 
 	public function signup()
 	{
-		$this->load->view('templates/header_home_signup');
-		$this->load->view('signup');	
+		$this->load->helper('form');
+	    $this->load->library('form_validation');
+
+		$this->form_validation->set_rules('name', 'Name', 'required');
+		$this->form_validation->set_rules('username', 'Username', 'required');
+		$this->form_validation->set_rules('password', 'Password', 'required');
+
+		if ($this->form_validation->run() === FALSE) {
+
+	        $this->load->view('templates/header_home_signup');
+	        $this->load->view('signup');
+	        $this->load->view('footer');
+	    
+	    } else {
+	    
+	        $this->user->register();
+   			$this->data['error'] = "*You can login now";
+			$this->load->view('header');
+			$this->load->view('home', $this->data);
+			$this->load->view('footer');
+			return;
+		}
 	}
 }

@@ -17,4 +17,17 @@ class User extends CI_Model {
 		if( $result = $this->db->query($query) ) return $result;	
 		else return false;
 	}
+
+	public function register()
+	{
+		$this->load->helper('url');
+
+		$data = array(
+	        'name' => $this->input->post('name'),
+	        'username' => $this->input->post('username'),
+	        'pass' => sha1( $this->input->post('password') )
+    	);
+	
+		return $this->db->insert('user', $data);
+	}
 }
