@@ -9,11 +9,11 @@ class Main_controller extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('user');
+		session_start();
 	}
 	
 	public function login()
 	{
-		session_start();
 		if( !isset($_POST['login']) ) {
 			redirect('main_controller');
 			return;
@@ -50,7 +50,7 @@ class Main_controller extends CI_Controller {
 		}
 
 		$_SESSION['user'] = $user;
-		$this->board();
+		redirect(base_url('index.php/main_controller/board'));
 	}
 
 	public function index() 
