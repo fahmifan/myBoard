@@ -27,8 +27,8 @@ class Main_controller extends CI_Controller {
 			return;
 		}
 
-		$user = $_POST['username'];
-		$pass = $_POST['password'];
+		$user = $this->input->post('username');
+		$pass = $this->input->post('password');
 
 		$response = $this->user->login($user, $pass);
 		if( $response == false ) {
