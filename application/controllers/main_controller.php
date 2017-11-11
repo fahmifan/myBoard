@@ -3,6 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Main_controller extends CI_Controller {
 
+	protected $data = array();
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -18,7 +20,10 @@ class Main_controller extends CI_Controller {
 		}
 			
 		if( empty( trim($_POST['username']) ) && empty( trim($_POST['password']) ) ) {
-			echo "Username dan Password harus diisi!";
+			$this->data['error'] = "*Username dan Password harus diisi!";
+			$this->load->view('header');
+			$this->load->view('home', $this->data);
+			$this->load->view('footer');		
 			return;
 		}
 
@@ -28,19 +33,19 @@ class Main_controller extends CI_Controller {
 		$response = $this->user->login($user, $pass);
 		if( $response == false ) {
 			$this->index();
-			echo "Maaf ada kesalahan";			
-		
+			$this->data['error'] = "*Maaf ada kesalahan";
+			$this->load->view('header');
+			$this->load->view('home', $this->data);
+			$this->load->view('footer');		
 			return;
 		}
 
 		if( $response->num_rows() != 1 ) {
 			
-			$warn['error'] =  "Username atau password tidak ditemukan";
-			
+			$this->data['error'] =  "*Username atau password tidak ditemukan";
 			$this->load->view('header');
-			$this->load->view('home', $warn);
-			$this->load->view('footer');
-
+			$this->load->view('home', $this->data);
+			$this->load->view('footer');		
 			return;
 		}
 
@@ -50,9 +55,10 @@ class Main_controller extends CI_Controller {
 
 	public function index() 
 	{
-		$warn['error'] = '';
+		$this->data['error'] = '';
+
 		$this->load->view('header');
-		$this->load->view('home', $warn);
+		$this->load->view('home', $this->data);
 		$this->load->view('footer');
 	}
 
