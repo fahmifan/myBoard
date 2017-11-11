@@ -29,15 +29,16 @@ class Main_controller extends CI_Controller {
 		if( $response == false ) {
 			$this->index();
 			echo "Maaf ada kesalahan";			
+		
 			return;
 		}
 
 		if( $response->num_rows() != 1 ) {
 			
-			$data['error'] =  "Username atau password tidak ditemukan";
+			$warn['error'] =  "Username atau password tidak ditemukan";
 			
 			$this->load->view('header');
-			$this->load->view('home', $data);
+			$this->load->view('home', $warn);
 			$this->load->view('footer');
 
 			return;
@@ -49,8 +50,9 @@ class Main_controller extends CI_Controller {
 
 	public function index() 
 	{
+		$warn['error'] = '';
 		$this->load->view('header');
-		$this->load->view('home');
+		$this->load->view('home', $warn);
 		$this->load->view('footer');
 	}
 

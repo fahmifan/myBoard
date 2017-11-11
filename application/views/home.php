@@ -26,7 +26,7 @@
 							</div>
 						</form>
 						<br>
-					<center>*<?= $error; ?></center>
+					<center><?= $error; ?></center>
 				</div> <!-- end login -->
 			</div>
 		</div>
