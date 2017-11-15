@@ -9,8 +9,6 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style_signup.css">
 </head>
 <body>
-	<?php $this->load->library('form_validation');?>
-	
 	<div class="container-fluid" style="padding: 0px">
 		<div class="signup">
 			<div class="row"> <!-- Signup form -->
@@ -21,15 +19,20 @@
 						<p>Password</p>
 					</div>
 					<div class="col-md-6" style="position: relative; top: 10px; left: -50px">
-					<?php echo form_open('main_controller/signup'); ?>
+					<form style="margin-bottom: 10px">
 						<span class="signup-input"><input type="Text" name="name"></span>
+					</form>
+					<form style="margin-bottom: 10px">
 						<input type="Text" name="username">
+					</form>
+					<form style="margin-bottom: 10px">
 						<input type="Password" name="password">
+					</form>
+					<form style="margin-bottom: 10px">
 						<input type="submit" value="Sign Up" method="post" class="signup-button">
 					</form>
 					</div>
 			</div>
-			<?php echo validation_errors(); ?>
 		</div>	<!-- end signup form -->
 		<div class="alamat">
 			<div class="row">
