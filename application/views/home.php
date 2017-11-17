@@ -11,10 +11,12 @@
 
 </head>
 <body>
+	<?php $this->load->library('form_validation') ?>
+
 	<div class="login"> <!-- Login -->
 			<h1>Welcome to myBoard</h1>
 			<div class="login-form">
-				<form action="<?= base_url('index.php/main_controller/');?>login" method="post" class="login-form2">
+				<?php echo form_open('main_controller/login'); ?>	
 					<table>
 						<tr>
 							<td>
@@ -42,7 +44,8 @@
 				</div>
 			</div>
 			<br>
-		<center><?= $error; ?></center>
+			<center><?php echo validation_errors();  ?></center>
+			<center><?php echo $error;  ?></center>
 	</div> <!-- end login -->
 	<div class="text-container">
 		<div class="bg-image" style="background-image: url(<?php echo base_url(); ?>assets/image/home-image-v2.jpg);"> <!-- Background Image -->
