@@ -56,14 +56,13 @@ class Main_controller extends CI_Controller {
 				return;
 			}
 	
-			$sess_user = $response->row();
-	
+			$user_data = $response->row();
 			$sess_user = array (
-				'id' => $sess_user->id,
-				'name' => $sess_user->name,
+				'id' => $user_data->id,
+				'name' => $user_data->name,
 				'username' => $user,
 			);
-	
+
 			$this->session->set_userdata($sess_user);
 			redirect(base_url('index.php/main_controller/board'));		
 		}
@@ -108,7 +107,7 @@ class Main_controller extends CI_Controller {
 	public function signup()
 	{
 		$this->load->helper('form');
-	    $this->load->library('form_validation');
+		$this->load->library('form_validation');
 
 		$this->form_validation->set_rules('name', 'Name', 'required');
 		$this->form_validation->set_rules('username', 'Username', 'required');
@@ -121,8 +120,14 @@ class Main_controller extends CI_Controller {
 	        $this->load->view('footer');
 	    
 	    } else {
-	    
-	        $this->user->register();
+
+			$signup_form = array(
+				'name' => $this->input->post('name'),
+				'username' => $this->input->post('username'),
+				'pass' => sha1( $this->input->post('password') )
+			);
+
+	        $this->user->register($signup_form);
    			$this->data['error'] = "*You can login now";
 			$this->load->view('header');
 			$this->load->view('home', $this->data);
