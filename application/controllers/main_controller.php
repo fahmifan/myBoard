@@ -33,6 +33,7 @@ class Main_controller extends CI_Controller {
 
 		$response = $this->user->login($user, $pass);
 		if( $response == false ) {
+
 			$this->index();
 			$this->data['error'] = "*Maaf ada kesalahan";
 			$this->load->view('header');
@@ -101,7 +102,28 @@ class Main_controller extends CI_Controller {
 
 	public function signup()
 	{
-		$this->load->view('templates/header_home_signup');
-		$this->load->view('signup');	
+		$this->load->helper('form');
+	    $this->load->library('form_validation');
+
+		$this->form_validation->set_rules('name', 'Name', 'required');
+		$this->form_validation->set_rules('username', 'Username', 'required');
+		$this->form_validation->set_rules('password', 'Password', 'required');
+
+		if ($this->form_validation->run() === FALSE) {
+
+	        $this->load->view('templates/header_home_signup');
+	        $this->load->view('signup');
+	        $this->load->view('footer');
+	    
+	    } else {
+	    
+	        $this->user->register();
+   			$this->data['error'] = "*You can login now";
+			$this->load->view('header');
+			$this->load->view('home', $this->data);
+			$this->load->view('footer');
+			return;
+		}
 	}
+
 }
