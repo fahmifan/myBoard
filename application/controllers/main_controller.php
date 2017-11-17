@@ -9,7 +9,8 @@ class Main_controller extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('user');
-		session_start();
+		$this->load->library('session');
+		$this->data['error'] = '';
 	}
 	
 	public function login()
@@ -49,13 +50,22 @@ class Main_controller extends CI_Controller {
 			return;
 		}
 
-		$_SESSION['user'] = $user;
+		$sess_user = $response->row();
+
+		$sess_user = array (
+						'id' => $sess_user->id,
+						'name' => $sess_user->name,
+						'username' => $user,
+						
+		);
+
+		$this->session->set_userdata($sess_user);
 		redirect(base_url('index.php/main_controller/board'));
 	}
 
 	public function index() 
 	{
-		if( !isset( $_SESSION['user']) ) {
+		if( empty( $this->session->userdata('id') ) ) {
 
 			$this->data['error'] = '';
 
@@ -69,8 +79,7 @@ class Main_controller extends CI_Controller {
 
 	public function board() {
 
-		// echo $_SESSION['user'];
-		if( !isset( $_SESSION['user']) ) {
+		if( empty( $this->session->userdata('id') ) ) {
 			redirect(base_url('index.php/main_controller/'));		
 		}
 
@@ -82,7 +91,7 @@ class Main_controller extends CI_Controller {
 
 	public function list() 
 	{
-		if( !isset( $_SESSION['user']) ) {
+		if( empty( $this->session->userdata('id') ) ) {
 			redirect('main_controller');
 		}
 		
