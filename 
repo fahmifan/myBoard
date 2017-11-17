@@ -1,0 +1,601 @@
+[33mcommit 45047b5ba2171e41f7d4d74a9423dddaccb36942[m[33m ([m[1;36mHEAD -> [m[1;32madd-user-login[m[33m)[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Wed Nov 15 14:46:44 2017 +0700
+
+    Revert "Add user signup feature and register method in models"
+    
+    This reverts commit 988baa6c1323d3e0b7a406306f16c1e496580687.
+
+[33mcommit 988baa6c1323d3e0b7a406306f16c1e496580687[m[33m ([m[1;31morigin/add-user-login[m[33m, [m[1;32madd-user-register[m[33m)[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Sat Nov 11 21:58:56 2017 +0700
+
+    Add user signup feature and register method in models
+
+[33mcommit 5afb132860468c2bfdfadb5d2e49c2a2e22e3b9a[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Sat Nov 11 21:04:02 2017 +0700
+
+    change login method in main_controller and routes.php
+
+[33mcommit 3eec9ee9e8ec9e67efd3f11128ea860e48334fe6[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Sat Nov 11 11:25:09 2017 +0700
+
+    fix bugs: user no need to access login page after login. Board button cannot go to board page in list page
+
+[33mcommit a367867cd6d895de8f7dffbee59ddcdd88b5531e[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Sat Nov 11 11:13:23 2017 +0700
+
+    fix bugs cannot go to signup pages
+
+[33mcommit c22fb8a610531040516d8b7bded67657671a7f88[m[33m ([m[1;32mchange-url[m[33m)[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Sat Nov 11 08:22:42 2017 +0700
+
+    add restriction to user from accessing pages before login
+
+[33mcommit cbb58466ddffc20f18b1831beaa91fc2b2142136[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Sat Nov 11 07:53:24 2017 +0700
+
+    fix validation message when login
+
+[33mcommit f371d9941527704a988e9a26278fbaf510dd40f3[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Sat Nov 11 07:06:22 2017 +0700
+
+    add login error msg and fixing some bugs 2
+
+[33mcommit c4c4228c80d74116d0836acc676b33224c186a96[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Sat Nov 11 06:53:16 2017 +0700
+
+    ngerapihin code di home.php
+
+[33mcommit 65a7b88f3f2843d5034b939e256a4f2c9610822b[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Sat Nov 11 06:52:04 2017 +0700
+
+    add login error msg and fixing some bugs
+
+[33mcommit f81df6b6a78d114ab8d9245f68506226db802584[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Fri Nov 10 20:54:39 2017 +0700
+
+    refine user login
+
+[33mcommit 4e36b898d9693efc371932b010ceda3815ea688f[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Thu Nov 9 15:23:26 2017 +0700
+
+    Add login method in main_controller
+
+[33mcommit 19225f145baad2c2b7a58287a3e747ff9a6446ed[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Thu Nov 9 15:04:36 2017 +0700
+
+    Add login fiture
+
+[33mcommit 270ac04561b6fe8617a6e0cd07c1ec87fb559928[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Thu Nov 9 13:33:29 2017 +0700
+
+    add class User.php in application/modal/
+
+[33mcommit 7d4a66e6af59a38d707d11f362db5afb040fc288[m
+Merge: 6c8f410 9774072
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Fri Nov 3 11:08:16 2017 +0700
+
+    change board.php and style_board and style_modal
+
+[33mcommit 6c8f410f12e422bcf0d14ae630713d072c9b5293[m
+Merge: a366936 4348a2b
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Fri Nov 3 10:50:40 2017 +0700
+
+    modified views and main_controller to be proper
+
+[33mcommit 4348a2b00b6f78e62eb3f000708231c82a116451[m[33m ([m[1;31morigin/CI_Sachi[m[33m, [m[1;32mCI_Sachi[m[33m)[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Fri Nov 3 10:16:55 2017 +0700
+
+    add list() in class main_controller
+
+[33mcommit ec957ef77a660d9c8863f1c65abe84f897f451db[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Fri Nov 3 10:07:14 2017 +0700
+
+    remove line that add form git
+
+[33mcommit 604d7ec0625c8089a72ac7733b0a61444ebe92a7[m
+Merge: 17f03c1 1ace595
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Fri Nov 3 10:05:38 2017 +0700
+
+    add list.php to views and in main_controller.php
+
+[33mcommit 97740722d26930a9da4cd03deb874c1f6c92ab05[m
+Author: muhamistau <islam.taufikurahman@gmail.com>
+Date:   Wed Nov 1 06:55:35 2017 +0700
+
+    board.html -> board.php
+
+[33mcommit 1ace5958d6733d91afff19ff19fde5aaf3067c20[m
+Author: unknown <sachihongo.sh@gmail.com>
+Date:   Mon Oct 30 17:39:40 2017 +0700
+
+    Add list and header_list in main_controller.php
+
+[33mcommit 34c805b0011dc9ed48c3ddbfd60dc57a0b292868[m
+Author: unknown <sachihongo.sh@gmail.com>
+Date:   Mon Oct 30 17:29:21 2017 +0700
+
+    Add list.php and header_list.php
+
+[33mcommit d87b96119900e37ee2716495363ab44fcb58208d[m
+Author: unknown <sachihongo.sh@gmail.com>
+Date:   Mon Oct 30 17:24:11 2017 +0700
+
+    Delete list.html
+
+[33mcommit 8cd59707e57c2c3ae8bddccc2f4bb3e8585d694d[m
+Author: unknown <sachihongo.sh@gmail.com>
+Date:   Mon Oct 30 17:23:10 2017 +0700
+
+    Delete list.html
+
+[33mcommit 1775c7537f9d471fb3feb47aa9268899b8acc00e[m
+Author: unknown <sachihongo.sh@gmail.com>
+Date:   Mon Oct 30 17:21:11 2017 +0700
+
+    Copy list.html to list.php
+
+[33mcommit 17f03c12d266fb29396dafcf4608550e542307da[m[33m ([m[1;31morigin/CI_Fahmi[m[33m)[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Mon Oct 30 13:16:10 2017 +0700
+
+    add view/templates/header_home_signup.php and add method signup in main_controller.php
+
+[33mcommit dcb7e3c42196e75204eac3e9b44c42a53d1e8c82[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Mon Oct 30 12:45:18 2017 +0700
+
+    delete signup.html
+
+[33mcommit 2a53886e36b07c5e1b40c3fc78013599bafad067[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Mon Oct 30 12:41:56 2017 +0700
+
+    delete signup.html
+
+[33mcommit 21394b09f05fb6b42efd8671680de018b364a284[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Mon Oct 30 12:41:27 2017 +0700
+
+    copy signup.html to signup.php
+
+[33mcommit e93ac06b8f809e3ff5374ae953b98b1705ade30b[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Mon Oct 30 12:36:44 2017 +0700
+
+    Revert "Create README.md"
+    
+    This reverts commit 5b64b5739410997aba06ee212240a49b3b4c576c.
+
+[33mcommit a3669361495ce37f459ae668e1a2ab7893481eb4[m
+Author: muhamistau <islam.taufikurahman@gmail.com>
+Date:   Sat Oct 28 22:56:13 2017 +0700
+
+    board.html -> board.php (view)
+
+[33mcommit 5b64b5739410997aba06ee212240a49b3b4c576c[m
+Author: unknown <sachihongo.sh@gmail.com>
+Date:   Sat Oct 28 22:36:38 2017 +0700
+
+    Create README.md
+
+[33mcommit 0530b138eb686baa953aa916039a8a8af6c91094[m
+Author: unknown <sachihongo.sh@gmail.com>
+Date:   Sat Oct 28 22:34:12 2017 +0700
+
+    Delete mockups/archived and mockups/Thumb.db
+
+[33mcommit 41e9de425461d1ed44348a9faffafe37221bd05f[m
+Author: unknown <sachihongo.sh@gmail.com>
+Date:   Sat Oct 28 22:32:44 2017 +0700
+
+    Structure Change
+
+[33mcommit 42855d551850a3613ede43450e35867825e3adf7[m
+Author: unknown <sachihongo.sh@gmail.com>
+Date:   Sat Oct 28 22:31:20 2017 +0700
+
+    Structure Change
+
+[33mcommit a3b76270a17814aa5c4ae5c34722604a6ea512f0[m
+Author: unknown <sachihongo.sh@gmail.com>
+Date:   Sat Oct 28 22:30:34 2017 +0700
+
+    Structure Change
+
+[33mcommit 4ba80111a03dc9ba440d8db63c59471c57f5e7b2[m
+Author: unknown <sachihongo.sh@gmail.com>
+Date:   Sat Oct 28 22:27:18 2017 +0700
+
+    Structure Change
+
+[33mcommit da1da4c16440f5d41cd6b20a6df1c829837bbee9[m
+Author: unknown <sachihongo.sh@gmail.com>
+Date:   Sat Oct 28 22:20:29 2017 +0700
+
+    Structure File
+
+[33mcommit 2fd2695ccf7b7d789e7f62e3a1f5c85992437884[m
+Author: muhamistau <islam.taufikurahman@gmail.com>
+Date:   Sat Oct 28 21:28:38 2017 +0700
+
+    pisahin header, footer ke file php
+
+[33mcommit 4e4c582a71b4f472ae2be2a9079bb15b52d34ac5[m
+Author: muhamistau <islam.taufikurahman@gmail.com>
+Date:   Sat Oct 28 19:19:56 2017 +0700
+
+    Structure Change
+
+[33mcommit 5ed7f86881bb45ed123ad5148bd159fd6eb2513e[m
+Author: muhamistau <islam.taufikurahman@gmail.com>
+Date:   Sat Oct 28 19:16:29 2017 +0700
+
+    index.html -> home.php (view)
+
+[33mcommit 0b1708db0fb25c256cc3a9893c92585970b48e4c[m[33m ([m[1;31morigin/use-ci-framework[m[33m)[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Sat Oct 28 11:35:35 2017 +0700
+
+    move static/W3School-Excercise/ to static/image/W3Schools-Excercise/
+
+[33mcommit f50997a204d2f2197eeea37d53a73850cf033604[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Sat Oct 28 11:33:58 2017 +0700
+
+    move Database Schema-myBoard.jpg to image/Database Schema-myBoard.jpg
+
+[33mcommit e5db66ee974a3892e1e069d343aa7e5e936ddf6c[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Sat Oct 28 11:32:52 2017 +0700
+
+    delete static/Thumbs.db and static/color-palette-test.PNG
+
+[33mcommit 30810b73f2d19700db6940dc56ff88b44ed2c70d[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Sat Oct 28 11:31:33 2017 +0700
+
+    delete mockups/archived and mockups/Thumb.db
+
+[33mcommit b1bf45eac1b304a1e67f3f26925d15b72a774283[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Sat Oct 28 11:22:35 2017 +0700
+
+    add codeigniter to myboard/ci_myboard/
+
+[33mcommit ff92d98f3a0ec9b59c5f684c479dc19d125aa33d[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: muhamistau <islam.taufikurahman@gmail.com>
+Date:   Wed Oct 11 09:45:03 2017 +0700
+
+    Revisi Mockup
+
+[33mcommit 38be4455b287ac5b550987db6f7990ee8cd8ab70[m
+Author: muhamistau <islam.taufikurahman@gmail.com>
+Date:   Wed Oct 11 00:34:23 2017 +0700
+
+    Update Board.html with modal
+
+[33mcommit ac5d5c48b91d088bc7abdcdc01dd1abb91cad984[m
+Author: unknown <sachihongo.sh@gmail.com>
+Date:   Tue Oct 10 09:00:23 2017 +0700
+
+    Modal Mockups
+
+[33mcommit 3b0c901d623ec9c9161263746d6cf94756ea647c[m
+Author: unknown <sachihongo.sh@gmail.com>
+Date:   Tue Oct 10 08:58:05 2017 +0700
+
+    CSS
+
+[33mcommit ff80c905c04b0def648920e8273eee977bff3891[m
+Author: unknown <sachihongo.sh@gmail.com>
+Date:   Tue Oct 10 08:54:29 2017 +0700
+
+    New Modal Button
+
+[33mcommit 7e81cb5baf66d635ff63230f3ab197dc03158442[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Mon Oct 9 13:36:13 2017 +0700
+
+    move Mockups Board and list.html from myborad -> mockups/archived
+
+[33mcommit 36817b70775c4fe2dd88f4f4c63fde987fd36a42[m
+Merge: 016fc19 e742ec6
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Mon Oct 9 13:31:59 2017 +0700
+
+    resolving conflict?
+
+[33mcommit 016fc19bb5eb65061ce3ef64aba7e346e7bb9fde[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Mon Oct 9 13:29:03 2017 +0700
+
+    iRevert "delet wlcome board n task board"
+    
+    This reverts commit 9b903149d2b4f507e0e6dd6294e793d385db0ba3.
+
+[33mcommit 45ca75a2e114e8758e6f3b6cf8acad6017541ef2[m
+Merge: a908d66 9b90314
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Mon Oct 9 13:11:23 2017 +0700
+
+    Merge branch 'fahmi-revision'
+
+[33mcommit 9b903149d2b4f507e0e6dd6294e793d385db0ba3[m[33m ([m[1;31morigin/fahmi-revision[m[33m)[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Sat Oct 7 21:54:11 2017 +0700
+
+    delet wlcome board n task board
+
+[33mcommit 31aa356b5e4b02bb9d1723d88ecfa366b464ee5d[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Sat Oct 7 21:39:21 2017 +0700
+
+    edit style_list.css, remove some unused code.  And use bootstrap-grid for all .html page
+
+[33mcommit ef5ea3a6bd17bd3cf73c8146706b3bcbe8a19bf8[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Sat Oct 7 20:36:28 2017 +0700
+
+    fix scroll issue add overflow
+
+[33mcommit e742ec6ea805fd7f7b36a14bdb8bebaa80272861[m
+Author: Muhammad Islam Taufikurahman <islam.taufikurahman@gmail.com>
+Date:   Thu Oct 5 08:40:31 2017 +0700
+
+    Create README.md
+
+[33mcommit d111a848f72a040604e765b0f88c74368f437748[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Tue Oct 3 23:54:44 2017 +0700
+
+    move all folder and file -> static, kecuali folder mockup
+
+[33mcommit c7c9f5a31bcbfe8320e7c43daa73cbc53dfcf248[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Tue Oct 3 23:53:02 2017 +0700
+
+    Change folder img -> image
+
+[33mcommit b8c9453e037cb571214d5d225a8df36a601a1317[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Tue Oct 3 23:49:01 2017 +0700
+
+    hapus folder mockup boards dan pindahin isinya ke mockup
+
+[33mcommit 0141630ae2e820ac563f9b92c113228883be5a4e[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Tue Oct 3 23:47:55 2017 +0700
+
+    hapus folder bootstap yg gadipake lagi (mereun)
+
+[33mcommit 1654df1bc41be5bc522ecf1bcb1a66ba2315ca61[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Tue Oct 3 23:47:13 2017 +0700
+
+    ngerapihin board page. Ngubah struktur folder css.
+
+[33mcommit 782e3631cfbb609054f664a5f16939c41beb5870[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Tue Oct 3 23:27:33 2017 +0700
+
+    new folder-file structure, some fixing in css and more
+
+[33mcommit 552a46bef4266abe73bc7c0ee655fb93458b0d40[m
+Author: unknown <sachihongo.sh@gmail.com>
+Date:   Tue Oct 3 22:59:35 2017 +0700
+
+    New Mockup Board
+
+[33mcommit a908d6684d7da83aee1ed45575d272878e85fef5[m
+Author: unknown <sachihongo.sh@gmail.com>
+Date:   Tue Oct 3 20:34:37 2017 +0700
+
+    Perbaikan Mockup
+
+[33mcommit c232f83b8ec7e818c08f0c335477323cf9e3e5bf[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Tue Oct 3 08:12:07 2017 +0700
+
+    new mockup & add signup page
+
+[33mcommit 7b40acf057be7c0cde4d8572831a0798f738ef60[m
+Author: muhamistau <islam.taufikurahman@gmail.com>
+Date:   Mon Oct 2 16:55:26 2017 +0700
+
+    Cobain Overflow
+
+[33mcommit 199708a3fa43d21bd34f0ba8fbfde4977b5adbff[m
+Author: muhamistau <islam.taufikurahman@gmail.com>
+Date:   Sun Oct 1 07:40:16 2017 +0700
+
+    board.html
+
+[33mcommit 0596377cf9499a28758b6c2b06d3e7a6ce99eac6[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Thu Sep 28 17:10:10 2017 +0700
+
+    delete style in index.html
+
+[33mcommit 65acd6d74d5ccccb06a6db443cd3f43ce1ec215f[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Thu Sep 28 17:08:28 2017 +0700
+
+    separate index.html css style into css/style_index.css
+
+[33mcommit 6c3c1dea6ec19d5d8785b59100d9417f5966eaf0[m
+Author: muhamistau <islam.taufikurahman@gmail.com>
+Date:   Wed Sep 27 13:42:46 2017 +0700
+
+    nyapu-nyapu repo
+
+[33mcommit 04948c376fd9258e310e5e5f322df5d91321d954[m
+Author: muhamistau <islam.tafikurahman@gmail.com>
+Date:   Wed Sep 27 12:58:36 2017 +0700
+
+    testing
+
+[33mcommit 77e4ae2de64803fe6bfe11cf3b29320a5dab8bac[m
+Author: muhamistau <islam.tafikurahman@gmail.com>
+Date:   Wed Sep 27 10:03:49 2017 +0700
+
+    Adding list.html
+
+[33mcommit 40836950f3809220e81cc06781e84027adbe9856[m
+Author: unknown <sachihongo.sh@gmail.com>
+Date:   Wed Sep 27 00:34:39 2017 +0700
+
+    Revisi TaskBoard HTML,CSS
+
+[33mcommit 81478e586d2eb1e1da64450e89d4e3ec3626ffc4[m
+Author: unknown <sachihongo.sh@gmail.com>
+Date:   Wed Sep 27 00:32:10 2017 +0700
+
+    Revisi Task Board dalam HTML,CSS
+
+[33mcommit 43ec8892ba78a8ea8d6a29f5c0fe5ea03ad06871[m
+Author: unknown <sachihongo.sh@gmail.com>
+Date:   Tue Sep 26 22:28:16 2017 +0700
+
+    Implementasi Task Board di HTML,Css
+
+[33mcommit 77ecaf9292cecae4405857f0ac3ee22549454eca[m
+Author: unknown <sachihongo.sh@gmail.com>
+Date:   Tue Sep 26 22:17:42 2017 +0700
+
+    Biar ga Berantakan Exercisenya
+
+[33mcommit e430073a2223760de1fd2c4aaab41a27b4d89170[m
+Author: unknown <sachihongo.sh@gmail.com>
+Date:   Tue Sep 26 22:13:52 2017 +0700
+
+    Biar ga Berantakan
+
+[33mcommit e321f1d1e045e811635ca19c4d796e9013903443[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Tue Sep 26 21:05:59 2017 +0700
+
+    add responsive w/ bootstrap grid
+
+[33mcommit f5774b5b11de01e2509538ef693598020924b3b1[m
+Merge: 51ed066 161fdb4
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Mon Sep 25 14:23:30 2017 +0700
+
+    Merge branch 'master' of https://github.com/fahmifan/myBoard
+
+[33mcommit 51ed066957fcaa677988161d4411e9a4805d4fda[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Mon Sep 25 14:10:55 2017 +0700
+
+    revisi design + tambah logo + warna palette baru + font baru
+
+[33mcommit 161fdb4c0ddcd948b4f972e8a3a6f1b7e852d805[m
+Author: unknown <sachihongo.sh@gmail.com>
+Date:   Mon Sep 25 10:06:52 2017 +0700
+
+    test push
+
+[33mcommit 7f65c7e5dc95f5bcb7b839033e64d9334b2345f1[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Mon Sep 25 09:06:28 2017 +0700
+
+    nambah background image, alamat dan icon sosmed
+
+[33mcommit 0bd6acfc46eea97d378822328c0f71b7a3e6bdf7[m
+Author: Muhammad Islam Taufikurahman <islam.tafikurahman@gmail.com>
+Date:   Sun Sep 24 18:43:22 2017 +0700
+
+    W3Schools HTML Exercise Completed
+
+[33mcommit 4533edf9b546915328ce05d52f108d3ad502b3a9[m
+Author: sachihongo <sachihongo.sh@gmail.com>
+Date:   Sat Sep 23 15:14:34 2017 +0700
+
+    w3Schools HTML-Excercise Completed-sachi
+
+[33mcommit fbc4cf96c70b55bbe15556fbbdf0d1fa41fff9c0[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Fri Sep 22 21:22:30 2017 +0700
+
+    home base code, tinggal dikembangin
+
+[33mcommit ec156695c7246fad831516a4f65f04596e7254c3[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Fri Sep 22 20:35:40 2017 +0700
+
+    ganti coba -> home
+
+[33mcommit edb871dc13a66696056cb16edc9ee4758681b743[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Thu Sep 21 20:19:52 2017 +0700
+
+    w3Schools HTML-Excercise Completed
+
+[33mcommit 7c5ae3830bcb790474f15d8f1d0c770e156e3121[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Wed Sep 20 14:43:58 2017 +0700
+
+    coba.html urang
+
+[33mcommit 57da64763ed1c78245d12b940f3f637a69fd420f[m
+Author: Muhammad Islam Taufikurahman <islam.tafikurahman@gmail.com>
+Date:   Wed Sep 20 12:52:46 2017 +0700
+
+    Turnback
+
+[33mcommit 15085cffaa6c9f5921d98b1a3fa9707bc09c021a[m
+Author: Muhammad Islam Taufikurahman <islam.tafikurahman@gmail.com>
+Date:   Wed Sep 20 12:48:52 2017 +0700
+
+    Testing
+
+[33mcommit 7bdae46432d8e3359ed8d3816caee789919b34bd[m
+Author: sachihongo <sachihongo.sh@gmail.com>
+Date:   Tue Sep 19 23:47:42 2017 +0700
+
+    Profile
+
+[33mcommit 6ba20badae6adc3e297864a00f96fcc6f0b296f8[m
+Author: sachihongo <sachihongo.sh@gmail.com>
+Date:   Tue Sep 19 20:12:13 2017 +0700
+
+    Welcome Board
+
+[33mcommit fb45751b9e5821f41f52ca062e2f1b349465f8b4[m
+Author: sachihongo <sachihongo.sh@gmail.com>
+Date:   Tue Sep 19 18:13:12 2017 +0700
+
+    Isi Board
+    
+    sachi
+
+[33mcommit 4de258e70d0bea8598877aa1d31f8784ddf7fdf8[m
+Author: Muhammad Islam Taufikurahman <islam.taufikurahman@gmail.com>
+Date:   Tue Sep 19 17:49:14 2017 +0700
+
+    Add files via upload
+
+[33mcommit 2d35a4330109b325b19fe53af6d49cd9407d0bd2[m
+Author: fahmi-irfan <fahmiirfan909@gmail.com>
+Date:   Tue Sep 19 17:01:44 2017 +0700
+
+    add mockups folder
