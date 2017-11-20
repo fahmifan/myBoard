@@ -109,8 +109,13 @@ class Main_controller extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 
-		$this->form_validation->set_rules('name', 'Name', 'required', 
-			array( 'required' => 'Required Name')
+		$this->form_validation->set_rules('name', 'Name', 
+			'required|min_length[3]|max_length[80]', 
+			array( 
+				'required' => 'Required Name',
+				'min_length' => 'Min 3 characters',
+				'max_length' => 'Max 80 characters'
+			)
 		);
 		$this->form_validation->set_rules(
 			'username', 'Username', 

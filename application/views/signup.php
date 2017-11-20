@@ -16,7 +16,7 @@
 		<div class="signup"> <!-- Signup form -->
 			<h2 id="signup">Signup</h2>	
 			<label>Name</label> <br>
-			<input type="Text" name="name" aria-hidden="true">
+			<input type="Text" name="name" value="<?= set_value('name') ?>">
 			<?php echo form_error('name', '<div class="error">', '</div>')?>
 		
 			<label>Username</label> <br>
@@ -24,7 +24,7 @@
 			<?php echo form_error('username', '<div class="error">', '</div>')?>
 
 			<label>Password</label> <br>
-			<input type="Password" name="password"> <br>
+			<input type="Password" name="password" value="<?= set_value('password') ?>"> <br>
 			<?php echo form_error('password', '<div class="error">', '</div>')?>
 
 			<label>Confirm Password</label> <br>
