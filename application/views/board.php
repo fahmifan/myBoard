@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap/bootstrap-grid.min.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome-4/css/font-awesome.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style_index.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style_board.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style_modal.css">
 </head>
 <body>
@@ -52,7 +53,7 @@
 			<span class="close">&times;</span>
 			<div class="modal-header">
 				<h3>Create new Board</h3>
-				<form action="<?php echo base_url('index.php/main_controller/createBoard')?>" method="POST">
+				<form style="color: black;" action="<?php echo base_url('index.php/main_controller/createBoard')?>" method="POST">
 					<input type="text" name="boardName" placeholder="Board Name">
 					<input type="submit" value="Submit">
 				</form>

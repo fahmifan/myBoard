@@ -13,6 +13,20 @@ class Main_controller extends CI_Controller {
 		$this->data['error'] = '';
 	}
 	
+	public function index() 
+	{
+		if( empty( $this->session->userdata('id') ) ) {
+
+			$this->data['error'] = '';
+
+			$this->load->view('header');
+			$this->load->view('home', $this->data);
+			$this->load->view('footer');
+			return;
+		}
+		redirect(base_url('index.php/main_controller/board'));
+	}
+
 	public function login()
 	{
 		if( !isset($_POST['login']) ) {
@@ -68,54 +82,6 @@ class Main_controller extends CI_Controller {
 		}
 	}
 
-	public function index() 
-	{
-		if( empty( $this->session->userdata('id') ) ) {
-
-			$this->data['error'] = '';
-
-			$this->load->view('header');
-			$this->load->view('home', $this->data);
-			$this->load->view('footer');
-			return;
-		}
-		redirect(base_url('index.php/main_controller/board'));
-	}
-
-	public function board() {
-
-		if( empty( $this->session->userdata('id') ) ) {
-			redirect(base_url('index.php/main_controller/'));		
-		}
-
-		$this->load->model('Board_Model');
-		$dataBoard = $this->Board_Model->getBoard();
-		$data['dataBoard'] = $dataBoard;
-
-		$this->load->view('header');
-		$this->load->view('board', $data);
-		$this->load->view('footer');
-
-	}
-
-	public function createBoard()
-	{
-		$id_user = $this->session->userdata('id');
-		$this->load->model('Board_Model');
-		$this->Board_Model->insertBoard($id_user);
-		redirect('main_controller/board');
-	}
-
-	public function boardList() 
-	{
-		if( empty( $this->session->userdata('id') ) ) {
-			redirect('main_controller');
-		}
-		
-		$this->load->view('templates/header_list');
-		$this->load->view('list');
-	}
-
 	public function signup()
 	{
 		$this->load->helper('form');
@@ -169,5 +135,45 @@ class Main_controller extends CI_Controller {
 			$this->load->view('footer');
 			return;
 		}
+	}
+
+	public function logout()
+	{
+		$this->session->sess_destroy();
+		redirect(base_url('index.php/main_controller/'));
+	}
+	
+	public function board() {
+
+		if( empty( $this->session->userdata('id') ) ) {
+			redirect(base_url('index.php/main_controller/'));		
+		}
+
+		$this->load->model('Board_Model');
+		$dataBoard = $this->Board_Model->getBoard();
+		$data['dataBoard'] = $dataBoard;
+
+		$this->load->view('templates/header_board');
+		$this->load->view('board', $data);
+		$this->load->view('footer');
+
+	}
+
+	public function createBoard()
+	{
+		$id_user = $this->session->userdata('id');
+		$this->load->model('Board_Model');
+		$this->Board_Model->insertBoard($id_user);
+		redirect('main_controller/board');
+	}
+
+	public function boardList() 
+	{
+		if( empty( $this->session->userdata('id') ) ) {
+			redirect('main_controller');
+		}
+		
+		$this->load->view('templates/header_list');
+		$this->load->view('list');
 	}
 }
