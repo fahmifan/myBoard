@@ -19,15 +19,15 @@ class User extends CI_Model {
 		else return false;
 	}
 
-	public function register($data)
+	public function register()
 	{
-		// $this->load->helper('url');
+		$this->load->helper('url');
 
-		// $data = array(
-	    //     'name' => $this->input->post('name'),
-	    //     'username' => $this->input->post('username'),
-	    //     'pass' => sha1( $this->input->post('password') )
-    	// );
+		$data = array(
+	        'name' => $this->input->post('name'),
+	        'username' => $this->input->post('username'),
+	        'pass' => sha1( $this->input->post('password') )
+    	);
 	
 		return $this->db->insert('user', $data);
 	}

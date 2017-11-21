@@ -88,13 +88,25 @@ class Main_controller extends CI_Controller {
 			redirect(base_url('index.php/main_controller/'));		
 		}
 
+		$this->load->model('Board_Model');
+		$dataBoard = $this->Board_Model->getBoard();
+		$data['dataBoard'] = $dataBoard;
+
 		$this->load->view('header');
-		$this->load->view('board');
+		$this->load->view('board', $data);
 		$this->load->view('footer');
 
 	}
 
-	public function list() 
+	public function createBoard()
+	{
+		$id_user = $this->session->userdata('id');
+		$this->load->model('Board_Model');
+		$this->Board_Model->insertBoard($id_user);
+		redirect('main_controller/board');
+	}
+
+	public function boardList() 
 	{
 		if( empty( $this->session->userdata('id') ) ) {
 			redirect('main_controller');
@@ -109,9 +121,38 @@ class Main_controller extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 
-		$this->form_validation->set_rules('name', 'Name', 'required');
-		$this->form_validation->set_rules('username', 'Username', 'required');
-		$this->form_validation->set_rules('password', 'Password', 'required');
+		$this->form_validation->set_rules('name', 'Name', 
+			'required|min_length[3]|max_length[80]', 
+			array( 
+				'required' => 'Required Name',
+				'min_length' => 'Min 3 characters',
+				'max_length' => 'Max 80 characters'
+			)
+		);
+		$this->form_validation->set_rules(
+			'username', 'Username', 
+			'required|min_length[5]|max_length[12]|is_unique[user.username]',
+			array(
+				'required' => 'Required Username',
+				'min_length' => 'Min 5 characters',
+				'max_length' => 'Max 12 characters',
+				'is_unique' => 'Uername has been used' 
+			)
+		);
+		$this->form_validation->set_rules('password', 'Password',
+			'required|min_length[6]|max_length[12]',
+			array(
+				'required' => 'You must provide a %s.',
+				'min_length' => 'Min 6 characters',
+				'max_length' => 'Max 12 characters'
+			)
+		);
+		$this->form_validation->set_rules('passconf', 'Password Confirmation','required|matches[password]',
+			array(
+				'required' => 'Confirm your password',
+				'matches' => 'Password not match'
+			)
+		);
 
 		if ($this->form_validation->run() === FALSE) {
 
@@ -121,13 +162,7 @@ class Main_controller extends CI_Controller {
 	    
 	    } else {
 
-			$signup_form = array(
-				'name' => $this->input->post('name'),
-				'username' => $this->input->post('username'),
-				'pass' => sha1( $this->input->post('password') )
-			);
-
-	        $this->user->register($signup_form);
+	        $this->user->register();
    			$this->data['error'] = "*You can login now";
 			$this->load->view('header');
 			$this->load->view('home', $this->data);

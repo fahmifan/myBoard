@@ -5,32 +5,36 @@
     <meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap/bootstrap-grid.min.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome-4/font-awesome.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style_signup.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome-4/css/font-awesome.css">	
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom/style_signup.css">
+
 </head>
 <body>
-	<?php $this->load->library('form_validation');?>
-	
-	<div class="container-fluid" style="padding: 0px">
-		<div class="signup">
-			<div class="row"> <!-- Signup form -->
-				<h1 style="text-align: center;">Sign Up</h1>
-					<div class="col-md-6">
-						<p>Name</p>
-						<p>Username</p>
-						<p>Password</p>
-					</div>
-					<div class="col-md-6" style="position: relative; top: 10px; left: -50px">
-					<?php echo form_open('main_controller/signup'); ?>
-						<span class="signup-input"><input type="Text" name="name"></span>
-						<input type="Text" name="username">
-						<input type="Password" name="password">
-						<input type="submit" value="Sign Up" method="post" class="signup-button">
-					</form>
-					</div>
-			</div>
-			<?php echo validation_errors(); ?>
+	<?php $this->load->library('form_validation');?>	
+		
+		<?php echo form_open('main_controller/signup'); ?>
+		<div class="signup"> <!-- Signup form -->
+			<h2 id="signup">Signup</h2>	
+			<label>Name</label> <br>
+			<input type="Text" name="name" value="<?= set_value('name') ?>">
+			<?php echo form_error('name', '<div class="error">', '</div>')?>
+		
+			<label>Username</label> <br>
+			<input type="Text" name="username" value="<?= set_value('username')?>">
+			<?php echo form_error('username', '<div class="error">', '</div>')?>
+
+			<label>Password</label> <br>
+			<input type="Password" name="password" value="<?= set_value('password') ?>"> <br>
+			<?php echo form_error('password', '<div class="error">', '</div>')?>
+
+			<label>Confirm Password</label> <br>
+			<input type="Password" name="passconf"><br>	
+			<?php echo form_error('passconf', '<div class="error">', '</div>')?>
+			
+			<br><input type="submit" value="Sign Up" method="post" class="signup-button">
+		
 		</div>	<!-- end signup form -->
+		</form>
 		<div class="alamat">
 			<div class="row">
 				<div class="col-md-4">
