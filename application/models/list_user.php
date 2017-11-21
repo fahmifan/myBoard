@@ -1,11 +1,6 @@
 <?php
 class list_user extends CI_Model {
 
-    public function __construct() 
-    {
-        $this->load->database();
-    }
-
 	function getlist()
     {
         $query=$this->db->query("SELECT * FROM card");
