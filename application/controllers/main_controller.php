@@ -43,4 +43,11 @@ class Main_controller extends CI_Controller {
 		$this->load->view('templates/header_home_signup');
 		$this->load->view('signup');	
 	}
+
+	function simpan()
+    {   
+        $this->load->model('list_user');
+        $this->list_user->simpan_list();
+        $this->load->view('list');
+    }
 }
