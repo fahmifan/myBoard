@@ -32,8 +32,10 @@ class Main_controller extends CI_Controller {
 
 	public function list() 
 	{
+		$this->load->model('list_user');
+        $data['daftar_list'] = $this->list_user->getlist();
 		$this->load->view('templates/header_list');
-		$this->load->view('list');
+		$this->load->view('list',$data);
 	}
 
 	public function signup()
