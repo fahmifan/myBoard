@@ -86,10 +86,16 @@
 		  <h2>Progress In Done</h2>
 		</div>
 		<div class="modal-body">
-		  <p>Some text in the Modal Body</p>
-		  <p>Some other text...</p>
-		  <p>Some other text...</p>
-		  <p>Some other text...</p>
+		  <form action="simpan" method="post">
+	        <table> 
+	            <tr>
+	                <td><input type="text" name="nama"/></td>
+	            </tr>
+	            <tr>
+               		 <td><input type="submit" value="Simpan"/></td>
+            	</tr>
+	        </table>
+   		 </form>
 		</div>
 		<div class="modal-footer">
 		  <h3>Footer</h3>
