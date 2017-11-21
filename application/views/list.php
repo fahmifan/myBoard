@@ -22,7 +22,12 @@
 		    				<div><p><span class="limegreen"></span>Mentoring CBS</p></div>
 		    				<div><p>TBC Webinar: Seminar</p></div>
 							<div><p><span class="pink"></span>1:1 CBS</p></div>
-							<div><p>Materi Mentoring</p></div>
+							<div><p><?php
+               				 foreach($daftar_list as $user){
+      					 	 ?>
+      						  <?php echo $user->list_des; ?>
+
+      						  <?php } ?></p></div>
 							<button id="myBtn" style="background-color: limegreen;color:white">Add ++ </button>
 						</div>
 		    	</div>
