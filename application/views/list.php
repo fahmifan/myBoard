@@ -44,10 +44,7 @@
 				<h2>Progress In Progress</h2>
 			</div>
 			<div class="modal-body">
-				<p>Some text in the Modal Body</p>
-				<p>Some other text...</p>
-				<p>Some other text...</p>
-				<p>Some other text...</p>
+				
 			</div>
 			<div class="modal-footer">
 				<h3>Footer</h3>
@@ -76,44 +73,38 @@
 		  </div>
 		
 	</div>
-	
-
-		<script>
-			
+	</body>
+	<script>
+		window.onload = function(){
 			var modal3 = document.getElementById('myModal3');
 			var modal4 = document.getElementById('myModal4');
-			
-
+		
 			var btn3 = document.getElementById("myBtn3");
 			var btn4 = document.getElementById("myBtn4");
 			
 			var span3 = document.getElementsByClassName("close")[0];
 			var span4 = document.getElementsByClassName("close")[0];
 			
-			btn3.onclick = function() {
-				modal3.style.display = "block";
-			}
 			btn4.onclick = function() {
 				modal4.style.display = "block";
 			}
-
+			btn3.onclick = function() {
+				modal3.style.display = "block";
+			}
 			span3.onclick = function() {
 				modal3.style.display = "none";
 			}
 			span4.onclick = function() {
 				modal4.style.display = "none";
 			}
-			
-			
 			window.onclick = function(event) {
-				if (event.target == modal3) {
-					modal3.style.display = "none";
-				}
 				if (event.target == modal4) {
 					modal4.style.display = "none";
 				}
+				else if (event.target == modal3) {
+					modal3.style.display = "none";
+				}
 			}
-			
-			</script>		
-	</body>
+		}
+	</script>		
 </html>
