@@ -141,6 +141,11 @@ li {
 	margin-bottom: 0px;
 }
 
+div#card-height {
+    box-sizing: border-box;
+    height: 595px;
+}
+
 .card {
 	width: 300px;
 	/*max-height: 300px;*/

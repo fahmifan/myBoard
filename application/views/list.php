@@ -10,7 +10,7 @@
 			<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style_modal.css">
 	</head>
 	<body>
-		<div class="container-card">
+		<div class="container-card" id="card-height">
             <?php foreach ($dataList as $row) {
             	?>
             		<div class="card">
