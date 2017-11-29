@@ -4,6 +4,7 @@
 	<head>
 		<title>List Page</title>
 		<meta charset="utf-8">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 			<meta name="viewport" content="width=device-width, initial-scale=1">
 			<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap/bootstrap-grid.min.css">
 			<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style_list.css">
@@ -17,7 +18,7 @@
 				    	<div class="board-data">
 				    		<div class="card-scroll-y">
 			    				<div><span class="top-label"><?php echo $row->list_name ?></span></div>
-			   					<button id="myBtn3" style="background-color: limegreen;color:white">Add ++ </button>
+			   					<button class="btn_card" id="<?php echo $row->id ?>" style="background-color: limegreen;color:white">Add Card </button>
 			    			</div>
 				    	</div>
 		            </div>
@@ -27,7 +28,7 @@
              	<div class="board-data">
 		    		<div class="card-scroll-y">
 	             		<div></div>
-	    				<button id="myBtn4" style="background-color: red;color:white">Add New List </button>
+	    				<button class="btn_list" style="background-color: red;color:white">Add New List </button>
 	    			</div>
              	</div>
 		 	</div>
@@ -36,15 +37,19 @@
 
 	
 	<!-- Modal Card -->
-	<div id="myModal3" class="modal">
+	<div id="modal_card" class="modal">
 		<!-- Modal content -->
 		<div class="modal-content">
 			<div class="modal-header">
-				<span class="close">&times;</span>
+				<span id="close_card" class="close">&times;</span>
 				<h2>Progress In Progress</h2>
 			</div>
 			<div class="modal-body">
-				
+				<form action="<?php echo base_url('index.php/main_controller/createCard/')?>" method="POST">
+					<input value="" type="hidden">
+					<input type="text" name="card_name">
+					<input type="submit" value="Create Card">
+				</form>
 			</div>
 			<div class="modal-footer">
 				<h3>Footer</h3>
@@ -53,12 +58,12 @@
 	</div>
 	
 	<!-- Modal List -->
-	<div id="myModal4" class="modal">
+	<div id="modal_list" class="modal">
 		
 		  <!-- Modal content -->
 		  <div class="modal-content">
 			<div class="modal-header">
-			  <span class="close">&times;</span>
+			  <span id="close_list" class="close">&times;</span>
 			  <h2>Add New List</h2>
 			</div>
 			<div class="modal-body">
@@ -75,36 +80,28 @@
 	</div>
 	</body>
 	<script>
-		window.onload = function(){
-			var modal3 = document.getElementById('myModal3');
-			var modal4 = document.getElementById('myModal4');
-		
-			var btn3 = document.getElementById("myBtn3");
-			var btn4 = document.getElementById("myBtn4");
-			
-			var span3 = document.getElementsByClassName("close")[0];
-			var span4 = document.getElementsByClassName("close")[0];
-			
-			btn4.onclick = function() {
-				modal4.style.display = "block";
-			}
-			btn3.onclick = function() {
-				modal3.style.display = "block";
-			}
-			span3.onclick = function() {
-				modal3.style.display = "none";
-			}
-			span4.onclick = function() {
-				modal4.style.display = "none";
-			}
-			window.onclick = function(event) {
-				if (event.target == modal4) {
-					modal4.style.display = "none";
-				}
-				else if (event.target == modal3) {
-					modal3.style.display = "none";
-				}
-			}
-		}
+
+	function init_btn_modal_card() {
+		$('.btn_card').click(function(){
+			$('#modal_card').show();
+		});
+		$('#close_card').click(function(){
+			$('#modal_card').hide();
+		});
+	}
+
+	function init_btn_modal_list() {
+		$('.btn_list').click(function(){
+			$('#modal_list').show();
+		});
+		$('#close_list').click(function(){
+			$('#modal_list').hide();
+		});
+	}
+	$(document).ready(function (){
+		init_btn_modal_card();
+		init_btn_modal_list();
+	});
+
 	</script>		
 </html>
