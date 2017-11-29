@@ -18,7 +18,7 @@
 				    	<div class="board-data">
 				    		<div class="card-scroll-y">
 			    				<div><span class="top-label"><?php echo $row->list_name ?></span></div>
-			   					<button class="btn_card" id="<?php echo $row->id ?>" style="background-color: limegreen;color:white">Add Card </button>
+			   					<button class="btn_card" data-id="<?php echo $row->id ?>" style="background-color: limegreen;color:white">Add Card </button>
 			    			</div>
 				    	</div>
 		            </div>
@@ -35,7 +35,6 @@
 	 	 <!-- </div> -->
 		</div>
 
-	
 	<!-- Modal Card -->
 	<div id="modal_card" class="modal">
 		<!-- Modal content -->
@@ -46,7 +45,7 @@
 			</div>
 			<div class="modal-body">
 				<form action="<?php echo base_url('index.php/main_controller/createCard/')?>" method="POST">
-					<input value="" type="hidden">
+					<input value="" id="list_id" name="list_id" type="hidden">
 					<input type="text" name="card_name">
 					<input type="submit" value="Create Card">
 				</form>
@@ -82,7 +81,9 @@
 	<script>
 
 	function init_btn_modal_card() {
-		$('.btn_card').click(function(){
+		$('.btn_card').click(function(e){
+			var id = $(this).data('id');
+			$('#list_id').val(id);
 			$('#modal_card').show();
 		});
 		$('#close_card').click(function(){
@@ -98,10 +99,10 @@
 			$('#modal_list').hide();
 		});
 	}
+	
 	$(document).ready(function (){
 		init_btn_modal_card();
 		init_btn_modal_list();
 	});
-
 	</script>		
 </html>
