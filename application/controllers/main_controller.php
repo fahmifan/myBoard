@@ -165,6 +165,7 @@ class Main_controller extends CI_Controller {
 		$this->load->model('Board_Model');
 		$this->Board_Model->insertBoard($id_user);
 		redirect('main_controller/board');
+
 	}
 
 	public function boardList() 
@@ -173,7 +174,19 @@ class Main_controller extends CI_Controller {
 			redirect('main_controller');
 		}
 		
+		$id_board = $this->uri->segment(3);
+		$this->load->model('List_Model');
+		$dataList = $this->List_Model->getList($id_board);
+		$data['dataList'] = $dataList;
 		$this->load->view('templates/header_list');
-		$this->load->view('list');
+		$this->load->view('list', $data);
+	}
+
+	public function createList()
+	{
+		$id_board = $this->uri->segment(3);
+		$this->load->model('List_Model');
+		$this->List_Model->insertList($id_board);
+		redirect('main_controller/boardList/'.$id_board);
 	}
 }
