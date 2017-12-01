@@ -168,6 +168,13 @@ class Main_controller extends CI_Controller {
 
 	}
 
+	public function getBoard()
+	{
+		$boardData = ['boardName' => 'board 1'];
+		header('Content-Type: application/json');
+		echo json_encode( $boardData);
+	}
+
 	public function boardList() 
 	{
 		if( empty( $this->session->userdata('id') ) ) {
@@ -179,7 +186,7 @@ class Main_controller extends CI_Controller {
 		$dataList = $this->List_Model->getList($id_board);
 		$data['dataList'] = $dataList;
 		$this->load->view('templates/header_list');
-		$this->load->view('list', $data);
+		return $data['dataList'];
 	}
 
 	public function createList()
