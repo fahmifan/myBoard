@@ -16,6 +16,18 @@ class Board_Model extends CI_Model {
 		$query = $this->db->get_where('board', array('id_user' => $this->session->userdata('id')));
 		return $query->result();
 	}
+
+	public function getBoardById($id) {
+		$query = $this->db->get_where('board', array('id' => $id, 'id_user' => $this->session->userdata('id') ));
+		return $query->row();
+	}
+
+	public function updateBoard($id, $boardName) {
+		$this->db->set('boardName', $boardName);
+		$this->db->where(array('id'=> $id, 'id_user' => $this->session->userdata('id') ));
+		$query = $this->db->update('board');
+		return $query->result();
+	}
 }
 
 /* End of file Board_Model.php */

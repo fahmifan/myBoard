@@ -71,9 +71,9 @@
 			<span class="close">&times;</span>
 			<div class="modal-header">
 				<h3>Change Name</h3>
-				<form style="color: black;" action="<?php echo base_url('index.php/main_controller/createBoard')?>" method="POST">
+				<form style="color: black;" method="POST">
 					<input type="text" id="board_input" name="boardName" value="">
-					<input type="submit" value="Submit">
+					<button type="submit" value="" id="submit_update">Update</button>
 				</form>
 			</div>
 			<div class="modal-footer">
@@ -91,18 +91,35 @@
 				
 				$.ajax({
 					type: 'GET',
-					url: "getBoard?id=" + id,
+					url: "getBoardById?id=" + id,
 					success: function(data) {
-						$('#board_input').val(data.boardName);
+						$( "form" ).on( "submit", function( event ) {
+						});
+						$('#board_input').val(data.board_name);
 						$('#modal-update').show();
 					},
 					dataType: 'json'
 				});
-				$('.close').hide();
+				$('.close').click(function(){
+					$('#modal-update').hide();
+				});
 			});
 		};
 
-		
+		function init_submit_update() {
+			$('#submit_update').click(function(){
+				var id = $(this).data('id');
+				$.ajax({
+					type: 'POST',
+					url: "updateBoard?id=" + id,
+					data: $(this).serialize(),
+					success: function() {
+						alert('Data has been updated');						
+					},
+					dataType: 'json'
+				});				
+			});
+		}
 
 		$(document).ready(function(){
 			init_update_btn();

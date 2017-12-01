@@ -9,8 +9,9 @@ class Main_controller extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('user');
+		$this->load->model('Board_Model');		
 		$this->load->library('session');
-		$this->data['error'] = '';
+		$this->data['error'] = '';		
 	}
 	
 	public function index() 
@@ -162,17 +163,25 @@ class Main_controller extends CI_Controller {
 	public function createBoard()
 	{
 		$id_user = $this->session->userdata('id');
-		$this->load->model('Board_Model');
 		$this->Board_Model->insertBoard($id_user);
 		redirect('main_controller/board');
-
 	}
 
-	public function getBoard()
+	public function getBoardById()
 	{
-		$boardData = ['boardName' => 'board 1'];
+		$id = $this->input->get('id');
+		$boardData = $this->Board_Model->getBoardById($id);
 		header('Content-Type: application/json');
 		echo json_encode( $boardData);
+	}
+
+	public function updateBoard() {
+		$boardName = $this->input->post('boardName');
+		$id = $this->input->get('id');
+		$boardData = $this->Board_Model->updateBoard($id, $boardName);
+		// print_r($boardData);
+		// die();
+		redirect('main_controller/board');
 	}
 
 	public function boardList() 
