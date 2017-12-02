@@ -180,8 +180,6 @@ class Main_controller extends CI_Controller {
 		$id = $this->input->post('id-board');
 		echo $id;
 		$boardData = $this->Board_Model->updateBoard($id, $boardName);
-		// print_r($boardData);
-		// die();
 		redirect('main_controller/board');
 	}
 

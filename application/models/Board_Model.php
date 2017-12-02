@@ -26,7 +26,6 @@ class Board_Model extends CI_Model {
 		$this->db->set('board_name', $boardName);
 		$this->db->where(array('id'=> $id, 'id_user' => $this->session->userdata('id') ));
 		$query = $this->db->update('board');
-		// return $query->result();
 	}
 }
 

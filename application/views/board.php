@@ -116,47 +116,32 @@
 				});
 			});
 		};
-
-		function init_submit_update() {
-			// $('#submit_update').click(function(){
-			$(document).on('click', '#submit_update', function(){
-				alert("hello");
-				var id = $(this).data('id');
-				$.ajax({
-					type: 'POST',
-					url: "updateBoard?id=" + id,
-					data: $(this).serialize(),
-					success: function() {
-						alert('Data has been updated');						
-					},
-					dataType: 'json'
-				});				
-			});
-		}
+		/**
+		 * ajax post for board update 
+		 *
+		 * @return void
+		 */
+		// function init_submit_update() {
+		// 	// $('#submit_update').click(function(){
+		// 	$(document).on('click', '#submit_update', function(){
+		// 		alert("hello");
+		// 		var id = $(this).data('id');
+		// 		$.ajax({
+		// 			type: 'POST',
+		// 			url: "updateBoard?id=" + id,
+		// 			data: $(this).serialize(),
+		// 			success: function() {
+		// 				alert('Data has been updated');						
+		// 			},
+		// 			dataType: 'json'
+		// 		});				
+		// 	});
+		// }
 
 		$(document).ready(function(){
 			init_create_board();
 			init_update_btn();
 		});
-
-		// var modal = document.getElementById('myModal');
-		// var btn = document.getElementById("myBtn");
-		// var span = document.getElementsByClassName("close")[0];
-		
-		// btn.onclick = function() {
-		// 		modal.style.display = "block";
-		// }
-
-		// span.onclick = function() {
-		// 		modal.style.display = "none";
-		// }
-
-		// window.onclick = function(event) {
-		// 	if (event.target == modal) {
-		// 		modal.style.display = "none";
-		// 	}
-		// }
-
 	</script>
 </body>
 </html>
