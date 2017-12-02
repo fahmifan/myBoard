@@ -1,5 +1,6 @@
 .board-height {
-    height: 382px;
+    height: 100%;
+    padding-bottom: 24%;
     color: white;
 }
 

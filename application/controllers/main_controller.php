@@ -177,7 +177,8 @@ class Main_controller extends CI_Controller {
 
 	public function updateBoard() {
 		$boardName = $this->input->post('boardName');
-		$id = $this->input->get('id');
+		$id = $this->input->post('id-board');
+		echo $id;
 		$boardData = $this->Board_Model->updateBoard($id, $boardName);
 		// print_r($boardData);
 		// die();
@@ -195,7 +196,7 @@ class Main_controller extends CI_Controller {
 		$dataList = $this->List_Model->getList($id_board);
 		$data['dataList'] = $dataList;
 		$this->load->view('templates/header_list');
-		return $data['dataList'];
+		$this->load->view('list', $data);
 	}
 
 	public function createList()

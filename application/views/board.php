@@ -40,7 +40,7 @@
 						</div>
 					</a> -->
 					<a id="myBtn" href="#">
-						<div class="col-md-4 box" style="margin: 5px">
+						<div class="col-md-4 box" id="new_board" style="margin: 5px">
 							New Board..
 						</div>
 					</a>
@@ -71,9 +71,10 @@
 			<span class="close">&times;</span>
 			<div class="modal-header">
 				<h3>Change Name</h3>
-				<form style="color: black;" method="POST">
+				<form style="color: black;" method="POST" action="<?= base_url('index.php/main_controller/updateBoard')?>">
 					<input type="text" id="board_input" name="boardName" value="">
-					<button type="submit" value="" id="submit_update">Update</button>
+					<input type="hidden" name="id-board" id="id_board">
+					<button type="submit" value="" id="submit_update" data-id="">Update</button>
 				</form>
 			</div>
 			<div class="modal-footer">
@@ -83,6 +84,15 @@
 
 
 	<script>
+		function init_create_board() {
+			$('#new_board').click(function() {
+				$('#myModal').show();
+				$('.close').click(function() {
+					$('#myModal').hide();
+				});
+			});
+		};
+
 		function init_update_btn(){
 			var id;
 			$('.btn-update').click(function(){
@@ -96,6 +106,7 @@
 						$( "form" ).on( "submit", function( event ) {
 						});
 						$('#board_input').val(data.board_name);
+						$('#id_board').val(id);
 						$('#modal-update').show();
 					},
 					dataType: 'json'
@@ -107,7 +118,9 @@
 		};
 
 		function init_submit_update() {
-			$('#submit_update').click(function(){
+			// $('#submit_update').click(function(){
+			$(document).on('click', '#submit_update', function(){
+				alert("hello");
 				var id = $(this).data('id');
 				$.ajax({
 					type: 'POST',
@@ -122,26 +135,27 @@
 		}
 
 		$(document).ready(function(){
+			init_create_board();
 			init_update_btn();
 		});
 
-		var modal = document.getElementById('myModal');
-		var btn = document.getElementById("myBtn");
-		var span = document.getElementsByClassName("close")[0];
+		// var modal = document.getElementById('myModal');
+		// var btn = document.getElementById("myBtn");
+		// var span = document.getElementsByClassName("close")[0];
 		
-		btn.onclick = function() {
-				modal.style.display = "block";
-		}
+		// btn.onclick = function() {
+		// 		modal.style.display = "block";
+		// }
 
-		span.onclick = function() {
-				modal.style.display = "none";
-		}
+		// span.onclick = function() {
+		// 		modal.style.display = "none";
+		// }
 
-		window.onclick = function(event) {
-			if (event.target == modal) {
-				modal.style.display = "none";
-			}
-		}
+		// window.onclick = function(event) {
+		// 	if (event.target == modal) {
+		// 		modal.style.display = "none";
+		// 	}
+		// }
 
 	</script>
 </body>
