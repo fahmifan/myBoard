@@ -117,12 +117,9 @@
 					type: 'GET',
 					url: "getBoardById?id=" + id,
 					success: function(data) {
-						$( "form" ).on( "submit", function( event ) {
-						});
-						$('#board_input').val(data.board_name);
-						$('#board_input_desc').val(data.board_desc);
-						$('#id_board').val(id);
-						$('#modal-update').show();
+						
+						console.log(y);
+						$('#cards').html(y);
 					},
 					dataType: 'json'
 				});

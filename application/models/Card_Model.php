@@ -15,7 +15,7 @@ class Card_Model extends CI_Model {
 	public function getCard($id_list)
 	{
 		$query = $this->db->get_where('card', array('id_list' => $id_list));
-		return $query;
+		return $query->result();
 	}
 }
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--Author : Sachi Hongo 140810160014-->
 <html>
-	<body>
+	<section>
 		<nav>
 			<ul>
 				<div class="row">

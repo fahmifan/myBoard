@@ -211,15 +211,31 @@ class Main_controller extends CI_Controller {
 			redirect('main_controller');
 		}
 		
-		$id_board = $this->uri->segment(3);
-		$dataList = $this->List_Model->getList($id_board);
-		$data['dataList'] = $dataList;
+		// $id_board = $this->uri->segment(3);
+		// $dataList = $this->List_Model->getList($id_board);
+		// $response = [];
+		// foreach($datalist as $row) : 
+		// 	$cards = $this->Card_Model->getCard($row->id);
+		// 	$card_response = []
+		// 	foreach($cards as $card) {
+		// 		array_push($card_response, [
+		// 			'card_id' => $card->id,
+		// 			'card_name' => $card->card_name
+		// 		])
+		// 	}
+		// 	array_push($response, [
+		// 		'list_id': $row->id,
+		// 		'cards': $card_response
+		// 	])
+		// endforeach;
+
+		// $data['dataList'] = $dataList;
 		/*$data['dataCard'] = $this->showCardByIdList();
 		var_dump($data['dataCard']->row());
 		die()*/;
 		
 		$this->load->view('templates/header_list');
-		$this->load->view('list', $data);
+		$this->load->view('list');
 	}
 
 	public function createList()
@@ -239,14 +255,40 @@ class Main_controller extends CI_Controller {
 		redirect('main_controller/boardList/'.$id_board.'/'.$id_list);
 	}
 
-	public function showCardByIdList()
+	public function getCardByIdList()
 	{
-		$id_list = $this->uri->segment(4);
-		$card = $this->Card_Model->getCard($id_list);
-		return $card;
-		/*echo "<pre>";
-		var_dump($card);
-		die();
-		echo "</pre>";*/
+		$id_list = $this->input->get('id');
+		$cardData = $this->Card_Model->getCard($id_list);
+		// var_dump($cardData); 
+		header('Content-Type: application/json');
+		echo json_encode( $cardData);
+		// die();
+	}
+
+	public function getListOfCards() {
+		$id_list = $this->input->get('id');		
+		$dataList = $this->List_Model->getList($id_list);
+		// var_dump($dataList); die();	
+		$response = [];
+		foreach($dataList as $row) {
+			$cards = $this->Card_Model->getCard($row->id);
+			// var_dump($cards); die();
+			$card_response = [];
+			foreach($cards as $card) {
+				array_push($card_response, [
+					'card_id' => $card->id,
+					'card_name' => $card->card_name
+				]);
+			}
+			// var_dump($card_response); die();
+			array_push($response, [
+				'list_name' => $row->list_name,
+				'list_id' => $row->id,
+				'cards'=> $card_response
+			]);
+			// var_dump($response);
+		}
+		header('Content-Type: application/json');		
+		echo json_encode( $response);		
 	}
 }

@@ -1,7 +1,13 @@
 a:link {
 	text-decoration: none;
 }
-
+#list-container {
+	display: -webkit-box;
+	width: 100%;
+	margin-right: -400px;
+    overflow-x: scroll;
+    margin-bottom: 0px;
+}
 .purple {
 	display: block;
 	background-color: #c377e0;
