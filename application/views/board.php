@@ -79,13 +79,16 @@
 			<div class="modal-header">
 				<h3>Change Board</h3>
 				<form style="color: black;" method="POST" action="<?= base_url('index.php/main_controller/updateBoard')?>">
+					<label for="name" class="modal_label">Name</label> <br>
 					<input type="text" id="board_input" name="boardName" value=""> <br>
+					<label for="desc" class="modal_label">Description</label> <br>
 					<textarea name="boardDesc" id="board_input_desc" cols="22" rows="3" placeholder="Description"></textarea> <br>
 					<input type="hidden" name="id-board" id="id_board">
 					<button type="submit" value="" id="submit_update" data-id="">Update</button>
+					<br> <br>	
 				</form>
 			</div>
-			<div class="modal-footer">
+			<!-- <div class="modal-footer"> -->
 			</div>
 		</div>
 	</div>
@@ -117,8 +120,12 @@
 					type: 'GET',
 					url: "getBoardById?id=" + id,
 					success: function(data) {
-						
-						
+						$( "form" ).on( "submit", function( event ) {
+						});
+						$('#board_input').val(data.board_name);
+						$('#board_input_desc').val(data.board_desc);
+						$('#id_board').val(id);
+						$('#modal-update').show();
 					},
 					dataType: 'json'
 				});

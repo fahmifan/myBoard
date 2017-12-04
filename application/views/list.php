@@ -39,13 +39,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="modal-body">
 				<form action="<?php echo base_url('index.php/main_controller/createCard/'.$this->uri->segment(3))?>" method="POST">
 					<input value="" id="list_id" name="list_id" type="hidden">
-					<input type="text" name="card_name"><br>
-					<input type="text" name="card_desc"><br>
+					<input type="text" name="card_name" placeholder="Name"><br>
+					<input type="text" name="card_desc" placeholder="Description"><br>
 					<input type="submit" value="Create Card">
+					<br><br>
 				</form>
-			</div>
-			<div class="modal-footer">
-				<h3>Footer</h3>
 			</div>
 		</div>	
 	</div>

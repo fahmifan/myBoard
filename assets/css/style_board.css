@@ -15,6 +15,13 @@ a:hover {
 a:active {
 	color: unset;
 }
+
+.modal_label {
+	color: white;
+	font-size: 14px;
+	font-weight: 700;	
+}
+
 .board_name {
 	box-sizing: border-box;
 }
