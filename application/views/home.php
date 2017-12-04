@@ -16,7 +16,7 @@
 	<div class="login"> <!-- Login -->
 			<h1>Welcome to myBoard</h1>
 			<div class="login-form">
-				<?php echo form_open('main_controller/login'); ?>	
+				<?php echo form_open('index.php/main_controller/login'); ?>	
 					<table>
 						<tr>
 							<td>

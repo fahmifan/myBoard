@@ -17,6 +17,12 @@ class Card_Model extends CI_Model {
 		$query = $this->db->get_where('card', array('id_list' => $id_list));
 		return $query->result();
 	}
+
+	public function deleteCardById($id)
+	{
+		$response = $this->db->delete('card', array('id' => $id));
+		return $response;
+	}
 }
 
 /* End of file Card_Model.php */

@@ -7,6 +7,27 @@ a:link {
 	margin-right: -400px;
     margin-bottom: 0px;
 }
+.btn {
+	color:white;
+	border:none;
+}
+.green-btn {
+	background-color:limegreen;
+}
+.orange-btn {
+	background-color: orange;
+}
+.red-btn {
+	background-color: red;
+}
+.blue-gtn {
+	background-color: blue;
+}
+.circle-btn {
+	border-radius:200%;
+	width:12px;
+	height:12px;
+}
 .purple {
 	display: block;
 	background-color: #c377e0;

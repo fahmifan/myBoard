@@ -73,7 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="modal-content">
 			<div class="modal-header">
 				<span id="close_list" class="close">&times;</span>
-				<h2>Add New List</h2>
+				<h2>Edit List</h2>
 			</div>
 			<div class="modal-body">
 				<form action="<?php echo base_url('index.php/main_controller/updateList/')?>" method="POST">
@@ -122,7 +122,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	}
 	function init_btn_edit_list() {
 		$(document).on('click','.btn_edit_list', function(){
-			id = $(this).data('id');
+			var id = $(this).data('id');
 			$('.btn-update').val(id);
 			$.ajax({
 				type: 'GET',
@@ -143,7 +143,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			});
 		});
 	}
-	
+	function init_btn_delete_card()
+	{
+		$(document).on('click', '.btn_delete_card', function(){
+			var id = $(this).data('id');
+				$.ajax({
+					type: 'POST',
+					url: "../deleteCardById?id=" + id,
+					success: function() {
+						console.log("delete success");
+						init_render_card();
+				}
+			});
+		});
+	}
 	function init_render_card(){
 		var board_id = $('meta[name=board_id]').attr('content');
 		// console.log("board id = ",board_id);
@@ -163,14 +176,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<!-- Cards Go here -->`;
 								for(var j = 0; j < data[i].cards.length; j++) {
 								list += 
-									`<div><p>` + data[i].cards[j].card_name + `</p></div>`;
+									`<div><p>` + data[i].cards[j].card_name + `
+										<button class="btn_delete_card btn red-btn circle-btn" data-id="` + data[i].cards[j].card_id + `">&nbsp;</button>
+										<button class="btn_edit_card btn orange-btn circle-btn" data-id="` + data[i].cards[j].card_id + `" >&nbsp;</button>
+										</p>
+									</div>`;
 								
 								}
-								`<!--  Cards Go up-->`;
 								list +=
-								// `<!--  Cards Go up-->
-			   					// <button class="btn_card" data-id="` + data[i].list_id + `" style="background-color: limegreen;color:white">Add Card </button>
-			    			`</div>
+								`<!--  Cards Go up-->
+			    			</div>
 							<button class="btn_card" data-id="` + data[i].list_id + `" style="background-color:limegreen;color:white;border:none;border-radius:7px;">Add Card</button>
 							<button class="btn_delete_list" data-id="` + data[i].list_id + `" style="background-color:red;color:white;border:none;border-radius:7px;">Delete List</button>
 							<button class="btn_edit_list" data-id="` + data[i].list_id + `" style="background-color:orange;color:white;border:none;border-radius:7px;">Edit List</button>
@@ -192,6 +207,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		});
 	};
 	$(document).ready(function (){
+		init_btn_delete_card();
 		init_btn_edit_list();
 		init_btn_modal_card();
 		init_btn_delete_list()

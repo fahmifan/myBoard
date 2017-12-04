@@ -175,7 +175,7 @@ class Main_controller extends CI_Controller {
 			echo "Error Encounter";
 			return;
 		}
-		redirect('main_controller/board');
+		redirect('index.php/main_controller/board');
 	}
 
 	public function getBoardById()
@@ -194,15 +194,14 @@ class Main_controller extends CI_Controller {
 		echo $id;
 		$boardData = $this->Board_Model->updateBoard($id, $boardName, $boardDesc);
 		// var_dump($boardData); die();
-		redirect('main_controller/board');
+		redirect('index.php/main_controller/board');
 	}
 
 	public function deleteBoard() {
-		// echo "delete board"; die();
 		$id = $this->uri->segment(3);
 		$result = $this->Board_Model->deleteBoard($id);
 		// var_dump($result); die();
-		redirect(('main_controller/board'));
+		redirect(('index.php/main_controller/board'));
 	}
 
 	public function boardList() 
@@ -218,7 +217,7 @@ class Main_controller extends CI_Controller {
 	{
 		$id_board = $this->uri->segment(3);
 		$this->List_Model->insertList($id_board);
-		redirect('main_controller/boardList/'.$id_board);
+		redirect('index.php/main_controller/boardList/'.$id_board);
 	}
 
 	public function getListById()
@@ -237,7 +236,7 @@ class Main_controller extends CI_Controller {
 		// echo $id;
 		$boardList = $this->List_Model->updateList($id, $listName);
 		// var_dump($id_board); var_dump($boardList); die();
-		redirect('main_controller/boardList/'.$id_board);
+		redirect('index.php/main_controller/boardList/'.$id_board);
 	}
 
 	public function deleteListById()
@@ -253,7 +252,7 @@ class Main_controller extends CI_Controller {
 		$id_board = $this->uri->segment(3);
 		$this->load->model('Card_Model');
 		$this->Card_Model->insertCard($id_list);
-		redirect('main_controller/boardList/'.$id_board);
+		redirect('index.php/main_controller/boardList/'.$id_board);
 	}
 
 	public function getCardByIdList()
@@ -264,6 +263,13 @@ class Main_controller extends CI_Controller {
 		header('Content-Type: application/json');
 		echo json_encode($cardData);
 		// die();
+	}
+
+	public function deleteCardById()
+	{
+		$id = $this->input->get('id');
+		$response = $this->Card_Model->deleteCardById($id);
+		// return;
 	}
 
 	public function getListOfCards() {
