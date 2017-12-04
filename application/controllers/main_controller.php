@@ -163,7 +163,16 @@ class Main_controller extends CI_Controller {
 	public function createBoard()
 	{
 		$id_user = $this->session->userdata('id');
-		$this->Board_Model->insertBoard($id_user);
+		$data = array(
+			'id_user' => $id_user,
+	        'board_name' => $this->input->post('boardName'),
+			'board_desc' => $this->input->post('boardDesc')
+		);
+		$result = $this->Board_Model->insertBoard($data);
+		if(!$result) {
+			echo "Error Encounter";
+			return;
+		}
 		redirect('main_controller/board');
 	}
 
@@ -171,16 +180,27 @@ class Main_controller extends CI_Controller {
 	{
 		$id = $this->input->get('id');
 		$boardData = $this->Board_Model->getBoardById($id);
+		// var_dump($boardData); die();
 		header('Content-Type: application/json');
 		echo json_encode( $boardData);
 	}
 
 	public function updateBoard() {
 		$boardName = $this->input->post('boardName');
+		$boardDesc = $this->input->post('boardDesc');
 		$id = $this->input->post('id-board');
 		echo $id;
-		$boardData = $this->Board_Model->updateBoard($id, $boardName);
+		$boardData = $this->Board_Model->updateBoard($id, $boardName, $boardDesc);
+		// var_dump($boardData); die();
 		redirect('main_controller/board');
+	}
+
+	public function deleteBoard() {
+		// echo "delete board"; die();
+		$id = $this->uri->segment(3);
+		$result = $this->Board_Model->deleteBoard($id);
+		// var_dump($result); die();
+		redirect(('main_controller/board'));
 	}
 
 	public function boardList() 

@@ -15,12 +15,21 @@ a:hover {
 a:active {
 	color: unset;
 }
-
+.board_name {
+	box-sizing: border-box;
+}
 .btn-update {
 	box-sizing: border-box;
 	position: relative;
-	padding-left: 65%;
 	border: none;
 	background-color: transparent;
 	text-decoration-style: none;
+}
+.btn-delete {
+	box-sizing: border-box;
+	position: relative;
+	border: none;
+	background-color: transparent;
+	text-decoration-style: none;
+	
 }

@@ -28,9 +28,15 @@
 						?> 
 						<div class="col-md-4 box" style="margin: 5px">
 						<a href="<?php echo base_url('index.php/main_controller/boardList/'.$row->id) ?>">
-							<?php echo $row->board_name ?>
-							</a>
+							<span class="board_name"><?php echo $row->board_name ?></span>
+						</a>
 							<button class="btn-update" data-id="<?php echo $row->id ?>" value=""><i class="fa fa-pencil-square-o" aria-hidden=""></i></button>
+							<form action="<?= base_url('index.php/main_controller/deleteBoard/'.$row->id);?>" method="POST">
+								<button class="btn-delete" data-id="<?php echo $row->id ?>" value="" type="submit"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+								<input type="hidden" name="id-board" id="id_board_delete">
+							</form>
+							<hr>
+							<?= $row->board_desc ?>
 						</div>
 						<?php
 					} ?>
@@ -56,7 +62,8 @@
 			<div class="modal-header">
 				<h3>Create new Board</h3>
 				<form style="color: black;" action="<?php echo base_url('index.php/main_controller/createBoard')?>" method="POST">
-					<input type="text" name="boardName" placeholder="Board Name">
+					<input type="text" name="boardName" placeholder="Board Name"> <br>
+					<textarea name="boardDesc" id="" cols="22" rows="3" placeholder="Description"></textarea>
 					<input type="submit" value="Submit">
 				</form>
 			</div>
@@ -70,9 +77,10 @@
 		<div class="modal-content">
 			<span class="close">&times;</span>
 			<div class="modal-header">
-				<h3>Change Name</h3>
+				<h3>Change Board</h3>
 				<form style="color: black;" method="POST" action="<?= base_url('index.php/main_controller/updateBoard')?>">
-					<input type="text" id="board_input" name="boardName" value="">
+					<input type="text" id="board_input" name="boardName" value=""> <br>
+					<textarea name="boardDesc" id="board_input_desc" cols="22" rows="3" placeholder="Description"></textarea>
 					<input type="hidden" name="id-board" id="id_board">
 					<button type="submit" value="" id="submit_update" data-id="">Update</button>
 				</form>
@@ -84,6 +92,13 @@
 
 
 	<script>
+		function init_delete_btn() {
+			$('.btn-delete').click(function() {
+				id = $(this).data('id');
+				$('.btn-delete').val(id);
+			});
+		}
+
 		function init_create_board() {
 			$('#new_board').click(function() {
 				$('#myModal').show();
@@ -98,7 +113,6 @@
 			$('.btn-update').click(function(){
 				id = $(this).data('id');
 				$('.btn-update').val(id);
-				
 				$.ajax({
 					type: 'GET',
 					url: "getBoardById?id=" + id,
@@ -106,6 +120,7 @@
 						$( "form" ).on( "submit", function( event ) {
 						});
 						$('#board_input').val(data.board_name);
+						$('#board_input_desc').val(data.board_desc);
 						$('#id_board').val(id);
 						$('#modal-update').show();
 					},
@@ -141,6 +156,7 @@
 		$(document).ready(function(){
 			init_create_board();
 			init_update_btn();
+			init_delete_btn();
 		});
 	</script>
 </body>
