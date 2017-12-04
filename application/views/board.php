@@ -63,7 +63,7 @@
 				<h3>Create new Board</h3>
 				<form style="color: black;" action="<?php echo base_url('index.php/main_controller/createBoard')?>" method="POST">
 					<input type="text" name="boardName" placeholder="Board Name"> <br>
-					<textarea name="boardDesc" id="" cols="22" rows="3" placeholder="Description"></textarea>
+					<textarea name="boardDesc" id="" cols="22" rows="3" placeholder="Description"></textarea> <br>
 					<input type="submit" value="Submit">
 				</form>
 			</div>
@@ -80,7 +80,7 @@
 				<h3>Change Board</h3>
 				<form style="color: black;" method="POST" action="<?= base_url('index.php/main_controller/updateBoard')?>">
 					<input type="text" id="board_input" name="boardName" value=""> <br>
-					<textarea name="boardDesc" id="board_input_desc" cols="22" rows="3" placeholder="Description"></textarea>
+					<textarea name="boardDesc" id="board_input_desc" cols="22" rows="3" placeholder="Description"></textarea> <br>
 					<input type="hidden" name="id-board" id="id_board">
 					<button type="submit" value="" id="submit_update" data-id="">Update</button>
 				</form>
