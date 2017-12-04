@@ -13,6 +13,7 @@
 	<body>
 		<div class="container-card" id="card-height">
             <?php foreach ($dataList as $row) {
+            	// var_dump($row);
             	?>
             		<div class="card">
 				    	<div class="board-data">
@@ -41,12 +42,13 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<span id="close_card" class="close">&times;</span>
-				<h2>Progress In Progress</h2>
+				<h2>Create Card</h2>
 			</div>
 			<div class="modal-body">
-				<form action="<?php echo base_url('index.php/main_controller/createCard/')?>" method="POST">
+				<form action="<?php echo base_url('index.php/main_controller/createCard/'.$this->uri->segment(3))?>" method="POST">
 					<input value="" id="list_id" name="list_id" type="hidden">
-					<input type="text" name="card_name">
+					<input type="text" name="card_name"><br>
+					<input type="text" name="card_desc"><br>
 					<input type="submit" value="Create Card">
 				</form>
 			</div>
@@ -100,6 +102,29 @@
 		});
 	}
 	
+	function init_render_card(){
+			var id;
+			$('.btn-update').click(function(){
+				id = $(this).data('id');
+				$('.btn-update').val(id);
+				$.ajax({
+					type: 'GET',
+					url: "getBoardById?id=" + id,
+					success: function(data) {
+						$( "form" ).on( "submit", function( event ) {
+						});
+						$('#board_input').val(data.board_name);
+						$('#board_input_desc').val(data.board_desc);
+						$('#id_board').val(id);
+						$('#modal-update').show();
+					},
+					dataType: 'json'
+				});
+				$('.close').click(function(){
+					$('#modal-update').hide();
+				});
+			});
+		};
 	$(document).ready(function (){
 		init_btn_modal_card();
 		init_btn_modal_list();

@@ -9,7 +9,9 @@ class Main_controller extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('user');
-		$this->load->model('Board_Model');		
+		$this->load->model('Board_Model');
+		$this->load->model('List_Model');
+		$this->load->model('Card_Model');
 		$this->load->library('session');
 		$this->data['error'] = '';		
 	}
@@ -210,9 +212,12 @@ class Main_controller extends CI_Controller {
 		}
 		
 		$id_board = $this->uri->segment(3);
-		$this->load->model('List_Model');
 		$dataList = $this->List_Model->getList($id_board);
 		$data['dataList'] = $dataList;
+		/*$data['dataCard'] = $this->showCardByIdList();
+		var_dump($data['dataCard']->row());
+		die()*/;
+		
 		$this->load->view('templates/header_list');
 		$this->load->view('list', $data);
 	}
@@ -223,5 +228,25 @@ class Main_controller extends CI_Controller {
 		$this->load->model('List_Model');
 		$this->List_Model->insertList($id_board);
 		redirect('main_controller/boardList/'.$id_board);
+	}
+
+	public function createCard()
+	{
+		$id_list = $this->input->post("list_id");
+		$id_board = $this->uri->segment(3);
+		$this->load->model('Card_Model');
+		$this->Card_Model->insertCard($id_list);
+		redirect('main_controller/boardList/'.$id_board.'/'.$id_list);
+	}
+
+	public function showCardByIdList()
+	{
+		$id_list = $this->uri->segment(4);
+		$card = $this->Card_Model->getCard($id_list);
+		return $card;
+		/*echo "<pre>";
+		var_dump($card);
+		die();
+		echo "</pre>";*/
 	}
 }
