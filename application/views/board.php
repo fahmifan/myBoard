@@ -118,8 +118,7 @@
 					url: "getBoardById?id=" + id,
 					success: function(data) {
 						
-						console.log(y);
-						$('#cards').html(y);
+						
 					},
 					dataType: 'json'
 				});

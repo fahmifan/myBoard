@@ -16,6 +16,12 @@ class List_Model extends CI_Model {
 		$query = $this->db->get_where('list', array('id_board' => $id_board));
 		return $query->result();
 	}
+
+	public function deleteListById($id)
+	{
+		$response = $this->db->delete('list', array('id' => $id));
+		return $response;
+	}
 }
 
 /* End of file List_Model.php */

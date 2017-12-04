@@ -15,18 +15,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style_modal.css">
 	</head>
 	<body>
-		
-		<div class="container-card" id="card-height">
-			<div id="list-container"></div>
-			<div class="card">
-				<div class="board-data">
-					<div class="card-scroll-y">
-						<button class="btn_list" style="background-color: red;color:white">Add New List </button>
-					</div>
+	<!-- List of Cards -->
+	<div class="container-card" id="card-height">
+		<div id="list-container"></div>
+		<!-- <div class="card">
+			<div class="board-data">
+				<div class="card-scroll-y">
+					<button class="btn_list" style="background-color: red;color:white">Add New List </button>
 				</div>
 			</div>
-		</div>
-
+		</div> -->
+	</div>
+	<!-- END List of Cards -->
 
 	<!-- Modal Card -->
 	<div id="modal_card" class="modal">
@@ -73,18 +73,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<script>
 
 	function init_btn_modal_card() {
-		$('.btn_card').click(function(e){
+		$(document).on('click','.btn_card', function(e){
 			var id = $(this).data('id');
 			$('#list_id').val(id);
 			$('#modal_card').show();
 		});
-		$('#close_card').click(function(){
+		$(document).on('click','#close_card', function(){
 			$('#modal_card').hide();
 		});
 	}
-
+	function init_btn_delete_list() {
+		$(document).on('click', '.btn_delete_list', function(){
+			var id = $(this).data('id');
+			$.ajax({
+				type: 'POST',
+				url: "../deleteListById?id=" + id,
+				success: function() {
+					console.log("delete success");
+					init_render_card();
+				}
+			});
+		});
+	}
 	function init_btn_modal_list() {
-		$('.btn_list').click(function(){
+		$(document).on('click','.btn_list', function(){
 			$('#modal_list').show();
 		});
 		$('#close_list').click(function(){
@@ -119,10 +131,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								// `<!--  Cards Go up-->
 			   					// <button class="btn_card" data-id="` + data[i].list_id + `" style="background-color: limegreen;color:white">Add Card </button>
 			    			`</div>
-							<button class="btn_card" data-id="` + data[i].list_id + `" style="background-color: limegreen;color:white">Add Card </button>
+							<button class="btn_card" data-id="` + data[i].list_id + `" style="background-color: limegreen;color:white">Add Card</button>
+							<button class="btn_delete_list" data-id="` + data[i].list_id + `" style="background-color: red;color:white">Delete List</button>
 					   	</div>
 					</div>`;
 				}
+				list += 
+				`<div class="card">
+					<div class="board-data">
+						<div class="card-scroll-y">
+							<button class="btn_list" style="background-color: red;color:white">Add New List </button>
+						</div>
+					</div>
+				</div>`
 				// console.log(list);
 			$('#list-container').html(list);
 			},
@@ -131,6 +152,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	};
 	$(document).ready(function (){
 		init_btn_modal_card();
+		init_btn_delete_list()
 		init_btn_modal_list();
 		init_render_card();
 	});

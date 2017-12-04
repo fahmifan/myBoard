@@ -210,30 +210,6 @@ class Main_controller extends CI_Controller {
 		if( empty( $this->session->userdata('id') ) ) {
 			redirect('main_controller');
 		}
-		
-		// $id_board = $this->uri->segment(3);
-		// $dataList = $this->List_Model->getList($id_board);
-		// $response = [];
-		// foreach($datalist as $row) : 
-		// 	$cards = $this->Card_Model->getCard($row->id);
-		// 	$card_response = []
-		// 	foreach($cards as $card) {
-		// 		array_push($card_response, [
-		// 			'card_id' => $card->id,
-		// 			'card_name' => $card->card_name
-		// 		])
-		// 	}
-		// 	array_push($response, [
-		// 		'list_id': $row->id,
-		// 		'cards': $card_response
-		// 	])
-		// endforeach;
-
-		// $data['dataList'] = $dataList;
-		/*$data['dataCard'] = $this->showCardByIdList();
-		var_dump($data['dataCard']->row());
-		die()*/;
-		
 		$this->load->view('templates/header_list');
 		$this->load->view('list');
 	}
@@ -241,9 +217,15 @@ class Main_controller extends CI_Controller {
 	public function createList()
 	{
 		$id_board = $this->uri->segment(3);
-		$this->load->model('List_Model');
 		$this->List_Model->insertList($id_board);
 		redirect('main_controller/boardList/'.$id_board);
+	}
+
+	public function deleteListById()
+	{
+		$id = $this->input->get('id');
+		$response = $this->List_Model->deleteListById($id);
+		var_dump($response); die();
 	}
 
 	public function createCard()
@@ -252,7 +234,7 @@ class Main_controller extends CI_Controller {
 		$id_board = $this->uri->segment(3);
 		$this->load->model('Card_Model');
 		$this->Card_Model->insertCard($id_list);
-		redirect('main_controller/boardList/'.$id_board.'/'.$id_list);
+		redirect('main_controller/boardList/'.$id_board);
 	}
 
 	public function getCardByIdList()
