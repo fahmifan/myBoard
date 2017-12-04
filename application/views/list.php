@@ -58,15 +58,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<div class="modal-body">
 				<form action="<?php echo base_url('index.php/main_controller/createList/'.$this->uri->segment(3))?>" method="POST">
-					<input type="text" name="listName" placeholder="List Name">
-					<input type="submit" value="Submit">
+					<input type="text" name="listName" placeholder="List Name" id="input_list" value=""> <br>
+					<input type="submit" value="Submit"> <br><br>
+					<input type="hidden" name="id_list" id="id_list">
 				</form>
-			</div>
-			<div class="modal-footer">
-				<h3>Footer</h3>
 			</div>
 		</div>
 	</div>
+	<!-- END Modal List -->
+	
+	<!-- Modal Update List -->
+	<div id="modal_update_list" class="modal">
+		<!-- Modal content -->
+		<div class="modal-content">
+			<div class="modal-header">
+				<span id="close_list" class="close">&times;</span>
+				<h2>Add New List</h2>
+			</div>
+			<div class="modal-body">
+				<form action="<?php echo base_url('index.php/main_controller/updateList/')?>" method="POST">
+					<input type="text" name="listName" placeholder="List Name" id="edit_input_list" value=""> <br>
+					<input type="submit" value="Submit"> <br><br>
+					<input type="hidden" name="id_list" id="id_edit_list">
+					<input type="hidden" name="id_board" id="id_board" value="<?= $this->uri->segment(3);?>">
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- END Modal Update List -->
 	</body>
 	<script>
 
@@ -101,6 +120,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$('#modal_list').hide();
 		});
 	}
+	function init_btn_edit_list() {
+		$(document).on('click','.btn_edit_list', function(){
+			id = $(this).data('id');
+			$('.btn-update').val(id);
+			$.ajax({
+				type: 'GET',
+				url: "../getListById?id=" + id,
+				success: function(data) {
+					$( "form" ).on( "submit", function( event ) {
+					});
+					console.log(data.list_name);
+					$('#edit_input_list').val(data.list_name);
+					$('#id_edit_list').val(id);
+					$
+					$('#modal_update_list').show();
+				},
+				dataType: 'json'
+			});
+			$('.close').click(function(){
+				$('#modal_update_list').hide();
+			});
+		});
+	}
 	
 	function init_render_card(){
 		var board_id = $('meta[name=board_id]').attr('content');
@@ -129,8 +171,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								// `<!--  Cards Go up-->
 			   					// <button class="btn_card" data-id="` + data[i].list_id + `" style="background-color: limegreen;color:white">Add Card </button>
 			    			`</div>
-							<button class="btn_card" data-id="` + data[i].list_id + `" style="background-color: limegreen;color:white">Add Card</button>
-							<button class="btn_delete_list" data-id="` + data[i].list_id + `" style="background-color: red;color:white">Delete List</button>
+							<button class="btn_card" data-id="` + data[i].list_id + `" style="background-color:limegreen;color:white;border:none;border-radius:7px;">Add Card</button>
+							<button class="btn_delete_list" data-id="` + data[i].list_id + `" style="background-color:red;color:white;border:none;border-radius:7px;">Delete List</button>
+							<button class="btn_edit_list" data-id="` + data[i].list_id + `" style="background-color:orange;color:white;border:none;border-radius:7px;">Edit List</button>
 					   	</div>
 					</div>`;
 				}
@@ -138,7 +181,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				`<div class="card">
 					<div class="board-data">
 						<div class="card-scroll-y">
-							<button class="btn_list" style="background-color: red;color:white">Add New List </button>
+							<button class="btn_list" style="background-color:blue;color:white;border:none;border-radius:7px;">Add New List </button>
 						</div>
 					</div>
 				</div>`
@@ -149,6 +192,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		});
 	};
 	$(document).ready(function (){
+		init_btn_edit_list();
 		init_btn_modal_card();
 		init_btn_delete_list()
 		init_btn_modal_list();

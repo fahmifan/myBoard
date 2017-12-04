@@ -221,6 +221,25 @@ class Main_controller extends CI_Controller {
 		redirect('main_controller/boardList/'.$id_board);
 	}
 
+	public function getListById()
+	{
+		$id_list = $this->input->get('id');
+		$dataList = $this->List_Model->getListById($id_list);
+		header('Content-Type: application/json');
+		echo json_encode( $dataList);
+	}
+	
+	public function updateList()
+	{
+		$listName = $this->input->post('listName');
+		$id = $this->input->post('id_list');
+		$id_board = $this->input->post('id_board');
+		// echo $id;
+		$boardList = $this->List_Model->updateList($id, $listName);
+		// var_dump($id_board); var_dump($boardList); die();
+		redirect('main_controller/boardList/'.$id_board);
+	}
+
 	public function deleteListById()
 	{
 		$id = $this->input->get('id');
@@ -243,7 +262,7 @@ class Main_controller extends CI_Controller {
 		$cardData = $this->Card_Model->getCard($id_list);
 		// var_dump($cardData); 
 		header('Content-Type: application/json');
-		echo json_encode( $cardData);
+		echo json_encode($cardData);
 		// die();
 	}
 

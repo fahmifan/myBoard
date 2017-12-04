@@ -17,6 +17,20 @@ class List_Model extends CI_Model {
 		return $query->result();
 	}
 
+	public function getListById($id)
+	{
+		$response = $this->db->get_where('list', array('id' => $id));
+		return $response->row();
+	}
+
+	public function updateList($id, $listName)
+	{
+		$this->db->set('list_name', $listName);
+		$this->db->where(array('id'=> $id));
+		$response = $this->db->update('list');
+		return $response;
+	}
+
 	public function deleteListById($id)
 	{
 		$response = $this->db->delete('list', array('id' => $id));
