@@ -255,6 +255,16 @@ class Main_controller extends CI_Controller {
 		redirect('index.php/main_controller/boardList/'.$id_board);
 	}
 
+	// Get a card of an id (card)
+	public function getCardById()
+	{
+		$id = $this->input->get('id');
+		$response = $this->Card_Model->getCardById($id);
+		header('Content-Type: application/json');
+		echo json_encode($response);
+	}
+
+	// Get All card from specific id_list
 	public function getCardByIdList()
 	{
 		$id_list = $this->input->get('id');
@@ -263,6 +273,24 @@ class Main_controller extends CI_Controller {
 		header('Content-Type: application/json');
 		echo json_encode($cardData);
 		// die();
+	}
+
+	// update a card by id
+	public function updateCard()
+	{
+		$id = $this->input->post('id');
+		$id_list = $this->input->post('id_list');
+		$id_board = $this->input->post('id_board');
+		$cardData = array(
+			'card_name' => $this->input->post('card_name'),
+			'card_desc' => $this->input->post('card_desc')
+		);
+		$response = $this->Card_Model->updateCard($id, $cardData);
+		if(!$response) {
+			echo "Error Encounter";
+			return;
+		}
+		redirect('index.php/main_controller/boardList/'.$id_board);
 	}
 
 	public function deleteCardById()

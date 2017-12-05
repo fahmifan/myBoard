@@ -47,6 +47,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 		</div>	
 	</div>
+	<!-- END Modal Card -->
+	
+	<!-- Modal Edit Card -->
+	<div id="modal_update_card" class="modal">
+		<!-- Modal content -->
+		<div class="modal-content">
+			<div class="modal-header">
+				<span id="close_card" class="close">&times;</span>
+				<h2>Edit Card</h2>
+			</div>
+			<div class="modal-body">
+				<form action="<?php echo base_url('index.php/main_controller/updateCard'); ?>" method="POST">
+					<input type="text" name="card_name" id="edit_card_name" placeholder="Name" value=""><br>
+					<input type="text" name="card_desc" id="edit_card_desc" placeholder="Description" value=""><br>
+					<!-- options of list exist for change the list this card belong -->
+					<input type="hidden" name="id" id="id_edit_card" value="">
+					<input type="hidden" name="id_list" id="id_list_card" value="">
+					<input type="hidden" name="id_board" id="id_board" value="<?= $this->uri->segment(3);?>">
+					<input type="submit" value="Create Card">
+					<br><br>
+				</form>
+			</div>
+		</div>	
+	</div>
+	<!-- END Modal Edit Card -->
 	
 	<!-- Modal List -->
 	<div id="modal_list" class="modal">
@@ -143,8 +168,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			});
 		});
 	}
-	function init_btn_delete_card()
-	{
+	function init_btn_delete_card() {
 		$(document).on('click', '.btn_delete_card', function(){
 			var id = $(this).data('id');
 				$.ajax({
@@ -154,6 +178,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						console.log("delete success");
 						init_render_card();
 				}
+			});
+		});
+	}
+	function init_btn_edit_card() {
+		$(document).on('click','.btn_edit_card', function(){
+			var id = $(this).data('id');
+			$('.btn-update').val(id);
+			$.ajax({
+				type: 'GET',
+				url: "../getCardById?id=" + id,
+				success: function(data) {
+					// console.log(data.card_name);
+					$('#edit_card_name').val(data.card_name);
+					$('#edit_card_desc').val(data.card_desc);
+					$('#id_edit_card').val(id);
+					$('#id_list_card').val(data.id_list);
+					$('#modal_update_card').show();
+					$( "form" ).on( "submit", function( event ) {
+					});
+				},
+				dataType: 'json'
+			});
+			$('.close').click(function(){
+				$('#modal_update_card').hide();
 			});
 		});
 	}
@@ -208,6 +256,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	};
 	$(document).ready(function (){
 		init_btn_delete_card();
+		init_btn_edit_card();
 		init_btn_edit_list();
 		init_btn_modal_card();
 		init_btn_delete_list()

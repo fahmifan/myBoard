@@ -12,6 +12,7 @@ class Card_Model extends CI_Model {
     	return $this->db->insert('card', $data);
 	}
 
+	// Get All Card of an id_list
 	public function getCard($id_list)
 	{
 		$query = $this->db->get_where('card', array('id_list' => $id_list));
@@ -21,6 +22,22 @@ class Card_Model extends CI_Model {
 	public function deleteCardById($id)
 	{
 		$response = $this->db->delete('card', array('id' => $id));
+		return $response;
+	}
+
+	// Get a card from id (card)
+	public function getCardById($id)
+	{
+		$response = $this->db->get_where('card',array('id' => $id));
+		return $response->row();
+	}
+
+	public function updateCard($id, $cardData){
+
+		$this->db->set('card_name', $cardData['card_name']);
+		$this->db->set('card_desc', $cardData['card_desc']);
+		$this->db->where(array('id'=> $id));
+		$response = $this->db->update('card');
 		return $response;
 	}
 }
