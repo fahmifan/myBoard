@@ -17,6 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	
 	<body >
 	<!-- List of Cards -->
+	<h2 id="board_name"><?= $board_name->board_name?></h2>
 	<div class="container-card" id="card-height">
 		<div id="list-container"></div>
 	</div>
@@ -240,11 +241,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					`<div class="card">
 						<div class="board-data">
 				    		<div class="card-scroll-y">
-			    				<div><span class="top-label">`+ data[i].list_name + `</span></div>
+			    				<div><b><span class="top-label">`+ data[i].list_name + `</span></b></div>
 								<!-- Cards Go here -->`;
 								for(var j = 0; j < data[i].cards.length; j++) {
 								list += 
-									`<div><p>` + data[i].cards[j].card_name + `
+									`<div clas="box-card"><p>` + data[i].cards[j].card_name + `
 										<button class="btn_delete_card btn red-btn circle-btn" data-id="` + data[i].cards[j].card_id + `">&nbsp;</button>
 										<button class="btn_edit_card btn orange-btn circle-btn" data-id="` + data[i].cards[j].card_id + `" >&nbsp;</button>
 										</p>
@@ -254,9 +255,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								list +=
 								`<!--  Cards Go up-->
 			    			</div>
-							<button class="btn_card" data-id="` + data[i].list_id + `" style="background-color:limegreen;color:white;border:none;border-radius:7px;">Add Card</button>
-							<button class="btn_delete_list" data-id="` + data[i].list_id + `" style="background-color:red;color:white;border:none;border-radius:7px;">Delete List</button>
-							<button class="btn_edit_list" data-id="` + data[i].list_id + `" style="background-color:orange;color:white;border:none;border-radius:7px;">Edit List</button>
+							<button class="btn_card btn green-btn" data-id="` + data[i].list_id + `" style="border-radius:7px;">Add Card</button>
+							<button class="btn_delete_list btn red-btn" data-id="` + data[i].list_id + `" style="border-radius:7px;">Delete List</button>
+							<button class="btn_edit_list btn orange-btn" data-id="` + data[i].list_id + `" style="border-radius:7px;">Edit List</button>
 					   	</div>
 					</div>`;
 				}
@@ -264,7 +265,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				`<div class="card">
 					<div class="board-data">
 						<div class="card-scroll-y">
-							<button class="btn_list" style="background-color:blue;color:white;border:none;border-radius:7px;">Add New List </button>
+							<button class="btn_list btn grey-btn" style="border-radius:7px;">Add New List </button>
 						</div>
 					</div>
 				</div>`

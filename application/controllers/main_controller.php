@@ -209,8 +209,15 @@ class Main_controller extends CI_Controller {
 		if( empty( $this->session->userdata('id') ) ) {
 			redirect('main_controller');
 		}
+		$id = $this->uri->segment(3);
+		$data['board_name'] = $this->Board_Model->getBoardById($id);
+		// echo "<pre>";
+		// var_dump($data);
+		// echo $data['board_name']->board_name; 
+		// echo "</pre>";
+		// die();
 		$this->load->view('templates/header_list');
-		$this->load->view('list');
+		$this->load->view('list',$data);
 	}
 
 	public function createList()

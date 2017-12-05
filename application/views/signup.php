@@ -12,7 +12,7 @@
 <body>
 	<?php $this->load->library('form_validation');?>	
 		
-		<?php echo form_open('main_controller/signup'); ?>
+		<?php echo form_open('index.php/main_controller/signup'); ?>
 		<div class="signup"> <!-- Signup form -->
 			<h2 id="signup">Signup</h2>	
 			<label>Name</label> <br>

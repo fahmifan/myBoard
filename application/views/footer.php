@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-</head>
-<body>
 	<div class="alamat">
 		<div class="row">
 			<div class="col-md-4">

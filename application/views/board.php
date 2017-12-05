@@ -13,18 +13,18 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style_modal.css">
 </head>
 
-<body style="background-color:#FFDC89">
+<body style="background-color:#FFDC89;background-image: url(http://localhost/myBoard/assets/image/monument-valley.jpg)">
 	<div class="board-height">
 		<div style="color: black">
 			<center>
-				<h3>
+				<h3 style="color:white">
 					Your Board
 				</h3>
 			</center>
 		</div>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12" style="margin: 20;">
+				<div class="col-md-12 box-shadow" style="margin: 20;">
 					<?php foreach ($dataBoard as $row) {
 						?> 
 						<div class="col-md-4 box" style="margin: 5px">

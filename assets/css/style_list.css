@@ -1,3 +1,8 @@
+#board_name {
+	margin-left: 30px;
+	margin-bottom: 0px;
+	color:white;
+}
 a:link {
 	text-decoration: none;
 }
@@ -7,21 +12,30 @@ a:link {
 	margin-right: -400px;
     margin-bottom: 0px;
 }
+.box-card {
+	box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
 .btn {
 	color:white;
 	border:none;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 .green-btn {
-	background-color:limegreen;
+	background-color:limegreen;	
 }
 .orange-btn {
-	background-color: orange;
+	background-color: orange;	
 }
 .red-btn {
-	background-color: red;
+	background-color: red;	
 }
-.blue-gtn {
-	background-color: blue;
+.grey-btn {
+	color: white;
+	opacity: 0.5;
+	background-color: #85959A;
+}
+.blue-btn {
+	background-color: blue;	
 }
 .circle-btn {
 	border-radius:200%;
@@ -116,6 +130,7 @@ ul li {
 	background-color: #e2e4e6;
 	border-radius: 10px;
 	padding:7px;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);		
 }
 
 .board-data div p {
@@ -137,8 +152,9 @@ body {
 	background-size: 100%;
 	background-position: fixed;
 	background-repeat: no-repeat;
-	background-color: #009688;
-	background-image:url('http://localhost/myBoard/assets/image/sunset.jpg');
+	/* background-color: #009688; */
+	background-image:url('http://localhost/myBoard/assets/image/monument-valley.jpg');
+	/* background: linear-gradient(var(--a, 100deg), #0ef49b, #d2dc69 30%, #faa04b 70%, #ff5a64); */
 }
 
 
@@ -167,7 +183,7 @@ li {
 	width: 100%;
 	overflow-x: scroll;
 	margin-bottom: 0px;
-	padding:30px;
+	padding-left: 5px;
 }
 
 div#card-height {
@@ -176,6 +192,7 @@ div#card-height {
 }
 
 .card {
+	box-sizing: border-box;
 	width: 300px;
 	/*max-height: 300px;*/
 	position: relative;

@@ -1,3 +1,7 @@
+.alamat {
+	/* shadow up */
+	box-shadow: 0 -3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);	
+}
 a {
 	color: #ffffff;
 	text-decoration: none;
@@ -21,7 +25,6 @@ a:active {
 	font-size: 14px;
 	font-weight: 700;	
 }
-
 .board_name {
 	box-sizing: border-box;
 }

@@ -2,7 +2,7 @@
 <!--Author : Sachi Hongo 140810160014-->
 <html>
 	<body>
-		<nav>
+		<nav style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)">
 			<ul>
 				<div class="row">
 				<div class="col-sm-3 col-xs-3 col-md-3">
