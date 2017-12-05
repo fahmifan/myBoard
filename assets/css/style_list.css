@@ -114,6 +114,7 @@ ul li {
 .board-data {
 	border:1px solid #e2e4e6;
 	background-color: #e2e4e6;
+	border-radius: 10px;
 	padding:7px;
 }
 
