@@ -12,7 +12,8 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style_board.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style_modal.css">
 </head>
-<body>
+
+<body style="background-color:#FFDC89">
 	<div class="board-height">
 		<div style="color: black">
 			<center>
