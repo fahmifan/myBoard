@@ -279,18 +279,37 @@ class Main_controller extends CI_Controller {
 	public function updateCard()
 	{
 		$id = $this->input->post('id');
-		$id_list = $this->input->post('id_list');
+		$id_list = $this->input->post('current_list');
 		$id_board = $this->input->post('id_board');
 		$cardData = array(
 			'card_name' => $this->input->post('card_name'),
 			'card_desc' => $this->input->post('card_desc')
 		);
-		$response = $this->Card_Model->updateCard($id, $cardData);
+		$response = $this->Card_Model->updateCard($id, $id_list, $cardData);
+		// var_dump($response); die();
 		if(!$response) {
 			echo "Error Encounter";
 			return;
 		}
 		redirect('index.php/main_controller/boardList/'.$id_board);
+	}
+
+	// get lists of board
+	public function getListOfBoard()
+	{
+		$id_board = $this->input->get('id_board');		
+		$dataList = $this->List_Model->getList($id_board);
+		// var_dump($dataList); die();	
+		$response = [];
+		foreach($dataList as $row) {
+			array_push($response, [
+				'list_name' => $row->list_name,
+				'list_id' => $row->id,
+			]);
+			// var_dump($response);
+		}
+		header('Content-Type: application/json');		
+		echo json_encode( $response);		
 	}
 
 	public function deleteCardById()
@@ -301,8 +320,8 @@ class Main_controller extends CI_Controller {
 	}
 
 	public function getListOfCards() {
-		$id_list = $this->input->get('id');		
-		$dataList = $this->List_Model->getList($id_list);
+		$id_board = $this->input->get('id');		
+		$dataList = $this->List_Model->getList($id_board);
 		// var_dump($dataList); die();	
 		$response = [];
 		foreach($dataList as $row) {

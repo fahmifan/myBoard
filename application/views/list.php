@@ -19,13 +19,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<!-- List of Cards -->
 	<div class="container-card" id="card-height">
 		<div id="list-container"></div>
-		<!-- <div class="card">
-			<div class="board-data">
-				<div class="card-scroll-y">
-					<button class="btn_list" style="background-color: red;color:white">Add New List </button>
-				</div>
-			</div>
-		</div> -->
 	</div>
 	<!-- END List of Cards -->
 
@@ -60,13 +53,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<div class="modal-body">
 				<form action="<?php echo base_url('index.php/main_controller/updateCard'); ?>" method="POST">
+					<label for="cardName">Name </label> <br>
 					<input type="text" name="card_name" id="edit_card_name" placeholder="Name" value=""><br>
+					<label for="cardDesc">Description </label> <br>
 					<input type="text" name="card_desc" id="edit_card_desc" placeholder="Description" value=""><br>
 					<!-- options of list exist for change the list this card belong -->
+					<label for="List">List </label> <br> 
+					<div class="list_options"></div>
 					<input type="hidden" name="id" id="id_edit_card" value="">
-					<input type="hidden" name="id_list" id="id_list_card" value="">
-					<input type="hidden" name="id_board" id="id_board" value="<?= $this->uri->segment(3);?>">
-					<input type="submit" value="Create Card">
+					<input type="hidden" name="id_list" id="id_list_card" data-id="" value="">
+					<input type="hidden" name="id_board" id="id_board" data-id="<?= $this->uri->segment(3);?>" value="<?= $this->uri->segment(3);?>">
+					<input type="submit" value="Submit">
 					<br><br>
 				</form>
 			</div>
@@ -112,6 +109,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 	</div>
 	<!-- END Modal Update List -->
+	
 	</body>
 	<script>
 
@@ -186,6 +184,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		$(document).on('click','.btn_edit_card', function(){
 			var id = $(this).data('id');
 			$('.btn-update').val(id);
+			
+			$.ajax({
+				type: 'GET',
+				url: "../getListOfBoard?id_board=" + $('#id_board').data('id'),
+				success: function(data) {
+					// console.log(data[0].list_name);
+					var list = '';
+					list += `<select name="current_list">`;
+
+					for(var i = 0; i < data.length; i++) {
+						list += `<option value="`+ data[i].list_id +`">` +data[i].list_name +`</option>`;
+					}
+					list += `</select>`
+					// console.log(list);
+					$('.list_options').html(list);
+				},
+				dataType: 'json'
+			});
+
 			$.ajax({
 				type: 'GET',
 				url: "../getCardById?id=" + id,
@@ -195,12 +212,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					$('#edit_card_desc').val(data.card_desc);
 					$('#id_edit_card').val(id);
 					$('#id_list_card').val(data.id_list);
+					// $('#id_list_card').data(data.id_list);
 					$('#modal_update_card').show();
 					$( "form" ).on( "submit", function( event ) {
 					});
 				},
 				dataType: 'json'
 			});
+
 			$('.close').click(function(){
 				$('#modal_update_card').hide();
 			});

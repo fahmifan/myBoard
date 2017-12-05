@@ -32,10 +32,11 @@ class Card_Model extends CI_Model {
 		return $response->row();
 	}
 
-	public function updateCard($id, $cardData){
+	public function updateCard($id, $id_list, $cardData){
 
 		$this->db->set('card_name', $cardData['card_name']);
 		$this->db->set('card_desc', $cardData['card_desc']);
+		$this->db->set('id_list', $id_list);
 		$this->db->where(array('id'=> $id));
 		$response = $this->db->update('card');
 		return $response;
