@@ -18,7 +18,7 @@
 		<div style="color: black">
 			<center>
 				<h3 style="color:white">
-					Your Board
+					Your Boards
 				</h3>
 			</center>
 		</div>
@@ -92,7 +92,7 @@
 			<!-- <div class="modal-footer"> -->
 			</div>
 		</div>
-	</div>
+	</div> 
 
 
 	<script>
