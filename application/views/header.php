@@ -15,7 +15,7 @@
 				<nav>	<!-- navbar -->
 					<ul>
 						<li>
-							<a href="<?php echo base_url(); ?>index.php/main_controller" style="color: white;">
+							<a href="<?php echo base_url(); ?>main_controller" style="color: white;">
 								<img src="<?php echo base_url(); ?>assets/image/logo-myBoard-w.png" style="width: 3%">
 								<b> myBoard</b>
 							</a>

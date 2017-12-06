@@ -27,7 +27,7 @@ class Main_controller extends CI_Controller {
 			$this->load->view('footer');
 			return;
 		}
-		redirect(base_url('index.php/main_controller/board'));
+		redirect(base_url('main_controller/board'));
 	}
 
 	public function login()
@@ -81,7 +81,7 @@ class Main_controller extends CI_Controller {
 			);
 
 			$this->session->set_userdata($sess_user);
-			redirect(base_url('index.php/main_controller/board'));		
+			redirect(base_url('main_controller/board'));		
 		}
 	}
 
@@ -143,13 +143,13 @@ class Main_controller extends CI_Controller {
 	public function logout()
 	{
 		$this->session->sess_destroy();
-		redirect(base_url('index.php/main_controller/'));
+		redirect(base_url('main_controller/'));
 	}
 	
 	public function board() {
 
 		if( empty( $this->session->userdata('id') ) ) {
-			redirect(base_url('index.php/main_controller/'));		
+			redirect(base_url('main_controller/'));		
 		}
 
 		$this->load->model('Board_Model');
@@ -175,7 +175,7 @@ class Main_controller extends CI_Controller {
 			echo "Error Encounter";
 			return;
 		}
-		redirect('index.php/main_controller/board');
+		redirect('main_controller/board');
 	}
 
 	public function getBoardById()
@@ -194,14 +194,14 @@ class Main_controller extends CI_Controller {
 		echo $id;
 		$boardData = $this->Board_Model->updateBoard($id, $boardName, $boardDesc);
 		// var_dump($boardData); die();
-		redirect('index.php/main_controller/board');
+		redirect('main_controller/board');
 	}
 
 	public function deleteBoard() {
 		$id = $this->uri->segment(3);
 		$result = $this->Board_Model->deleteBoard($id);
 		// var_dump($result); die();
-		redirect(('index.php/main_controller/board'));
+		redirect(('main_controller/board'));
 	}
 
 	public function boardList() 
@@ -224,7 +224,7 @@ class Main_controller extends CI_Controller {
 	{
 		$id_board = $this->uri->segment(3);
 		$this->List_Model->insertList($id_board);
-		redirect('index.php/main_controller/boardList/'.$id_board);
+		redirect('main_controller/boardList/'.$id_board);
 	}
 
 	public function getListById()
@@ -243,7 +243,7 @@ class Main_controller extends CI_Controller {
 		// echo $id;
 		$boardList = $this->List_Model->updateList($id, $listName);
 		// var_dump($id_board); var_dump($boardList); die();
-		redirect('index.php/main_controller/boardList/'.$id_board);
+		redirect('main_controller/boardList/'.$id_board);
 	}
 
 	public function deleteListById()
@@ -259,7 +259,7 @@ class Main_controller extends CI_Controller {
 		$id_board = $this->uri->segment(3);
 		$this->load->model('Card_Model');
 		$this->Card_Model->insertCard($id_list);
-		redirect('index.php/main_controller/boardList/'.$id_board);
+		redirect('main_controller/boardList/'.$id_board);
 	}
 
 	// Get a card of an id (card)
@@ -298,7 +298,7 @@ class Main_controller extends CI_Controller {
 			echo "Error Encounter";
 			return;
 		}
-		redirect('index.php/main_controller/boardList/'.$id_board);
+		redirect('main_controller/boardList/'.$id_board);
 	}
 
 	// get lists of board

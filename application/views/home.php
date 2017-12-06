@@ -16,7 +16,7 @@
 	<div class="login"> <!-- Login -->
 			<h1>Welcome to myBoard</h1>
 			<div class="login-form">
-				<?php echo form_open('index.php/main_controller/login'); ?>	
+				<?php echo form_open('main_controller/login'); ?>	
 					<table>
 						<tr>
 							<td>
@@ -40,7 +40,7 @@
 					</div>
 				</form>
 				<div class="btn-login">
-					<a href="<?= base_url('index.php/main_controller/signup')?>"><button class="btn-signup">Sign Up</button></a>
+					<a href="<?= base_url('main_controller/signup')?>"><button class="btn-signup">Sign Up</button></a>
 				</div>
 			</div>
 			<br>

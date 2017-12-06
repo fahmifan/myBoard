@@ -28,11 +28,11 @@
 					<?php foreach ($dataBoard as $row) {
 						?> 
 						<div class="col-md-4 box" style="margin: 5px">
-						<a href="<?php echo base_url('index.php/main_controller/boardList/'.$row->id) ?>">
+						<a href="<?php echo base_url('main_controller/boardList/'.$row->id) ?>">
 							<span class="board_name"><?php echo $row->board_name ?></span>
 						</a>
 							<button class="btn-update" data-id="<?php echo $row->id ?>" value=""><i class="fa fa-pencil-square-o" aria-hidden=""></i></button>
-							<form action="<?= base_url('index.php/main_controller/deleteBoard/'.$row->id);?>" method="POST">
+							<form action="<?= base_url('main_controller/deleteBoard/'.$row->id);?>" method="POST">
 								<button class="btn-delete" data-id="<?php echo $row->id ?>" value="" type="submit"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
 								<input type="hidden" name="id-board" id="id_board_delete">
 							</form>
@@ -62,7 +62,7 @@
 			<span class="close">&times;</span>
 			<div class="modal-header">
 				<h3>Create new Board</h3>
-				<form style="color: black;" action="<?php echo base_url('index.php/main_controller/createBoard')?>" method="POST">
+				<form style="color: black;" action="<?php echo base_url('main_controller/createBoard')?>" method="POST">
 					<input type="text" name="boardName" placeholder="Board Name"> <br>
 					<textarea name="boardDesc" id="" cols="22" rows="3" placeholder="Description"></textarea> <br>
 					<input type="submit" value="Submit">
@@ -79,7 +79,7 @@
 			<span class="close">&times;</span>
 			<div class="modal-header">
 				<h3>Change Board</h3>
-				<form style="color: black;" method="POST" action="<?= base_url('index.php/main_controller/updateBoard')?>">
+				<form style="color: black;" method="POST" action="<?= base_url('main_controller/updateBoard')?>">
 					<label for="name" class="modal_label">Name</label> <br>
 					<input type="text" id="board_input" name="boardName" value=""> <br>
 					<label for="desc" class="modal_label">Description</label> <br>

@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<h2>Create Card</h2>
 			</div>
 			<div class="modal-body">
-				<form action="<?php echo base_url('index.php/main_controller/createCard/'.$this->uri->segment(3))?>" method="POST">
+				<form action="<?php echo base_url('main_controller/createCard/'.$this->uri->segment(3))?>" method="POST">
 					<input value="" id="list_id" name="list_id" type="hidden">
 					<input type="text" name="card_name" placeholder="Name"><br>
 					<input type="text" name="card_desc" placeholder="Description"><br>
@@ -53,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<h2>Edit Card</h2>
 			</div>
 			<div class="modal-body">
-				<form action="<?php echo base_url('index.php/main_controller/updateCard'); ?>" method="POST">
+				<form action="<?php echo base_url('main_controller/updateCard'); ?>" method="POST">
 					<label for="cardName">Name </label> <br>
 					<input type="text" name="card_name" id="edit_card_name" placeholder="Name" value=""><br>
 					<label for="cardDesc">Description </label> <br>
@@ -81,7 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<h2>Add New List</h2>
 			</div>
 			<div class="modal-body">
-				<form action="<?php echo base_url('index.php/main_controller/createList/'.$this->uri->segment(3))?>" method="POST">
+				<form action="<?php echo base_url('main_controller/createList/'.$this->uri->segment(3))?>" method="POST">
 					<input type="text" name="listName" placeholder="List Name" id="input_list" value=""> <br>
 					<input type="submit" value="Submit"> <br><br>
 					<input type="hidden" name="id_list" id="id_list">
@@ -100,7 +100,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<h2>Edit List</h2>
 			</div>
 			<div class="modal-body">
-				<form action="<?php echo base_url('index.php/main_controller/updateList/')?>" method="POST">
+				<form action="<?php echo base_url('main_controller/updateList/')?>" method="POST">
 					<input type="text" name="listName" placeholder="List Name" id="edit_input_list" value=""> <br>
 					<input type="submit" value="Submit"> <br><br>
 					<input type="hidden" name="id_list" id="id_edit_list">
