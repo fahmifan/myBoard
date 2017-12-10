@@ -226,41 +226,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			});
 		});
 	}
+
+	// Render the lists of cards
 	function init_render_card(){
 		var board_id = $('meta[name=board_id]').attr('content');
-		// console.log("board id = ",board_id);
 		
 		$.ajax({
 			type: 'GET',
 			url: "../getListOfCards?id=" + board_id,
 			success: function(data) {
-				// console.log(data);
 				var list = '';
-				for(var i = 0; i < data.length; i++) {				
+				data.forEach(function(listArr) {
 					list +=
 					`<div class="card">
 						<div class="board-data">
 				    		<div class="card-scroll-y">
-			    				<div><b><span class="top-label">`+ data[i].list_name + `</span></b></div>
+			    				<div><b><span class="top-label">`+ listArr.list_name + `</span></b></div>
 								<!-- Cards Go here -->`;
-								for(var j = 0; j < data[i].cards.length; j++) {
-								list += 
-									`<div clas="box-card"><p>` + data[i].cards[j].card_name + `
-										<button class="btn_delete_card btn red-btn circle-btn" data-id="` + data[i].cards[j].card_id + `">&nbsp;</button>
-										<button class="btn_edit_card btn orange-btn circle-btn" data-id="` + data[i].cards[j].card_id + `" >&nbsp;</button>
+								listArr.cards.forEach(function(cardsArr) {
+									list += 
+									`<div clas="box-card"><p>` + cardsArr.card_name + `
+										<button class="btn_delete_card btn red-btn circle-btn" data-id="` + cardsArr.card_id + `">&nbsp;</button>
+										<button class="btn_edit_card btn orange-btn circle-btn" data-id="` + cardsArr.card_id + `" >&nbsp;</button>
 										</p>
 									</div>`;
-								
-								}
+								});								
 								list +=
 								`<!--  Cards Go up-->
 			    			</div>
-							<button class="btn_card btn green-btn" data-id="` + data[i].list_id + `" style="border-radius:7px;">Add Card</button>
-							<button class="btn_delete_list btn red-btn" data-id="` + data[i].list_id + `" style="border-radius:7px;">Delete List</button>
-							<button class="btn_edit_list btn orange-btn" data-id="` + data[i].list_id + `" style="border-radius:7px;">Edit List</button>
+							<button class="btn_card btn green-btn" data-id="` + listArr.list_id + `" style="border-radius:7px;">Add Card</button>
+							<button class="btn_delete_list btn red-btn" data-id="` + listArr.list_id + `" style="border-radius:7px;">Delete List</button>
+							<button class="btn_edit_list btn orange-btn" data-id="` + listArr.list_id + `" style="border-radius:7px;">Edit List</button>
 					   	</div>
 					</div>`;
-				}
+				});		
 				list += 
 				`<div class="card">
 					<div class="board-data">
@@ -269,7 +268,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</div>
 					</div>
 				</div>`
-				// console.log(list);
 			$('#list-container').html(list);
 			},
 			dataType: 'json'
