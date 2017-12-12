@@ -149,9 +149,9 @@ div p img {
 }
 
 body {
-	background-size: 100%;
-	background-position: fixed;
-	background-repeat: no-repeat;
+	background-size: cover;
+	/*background-position: fixed;*/
+	/*background-repeat: no-repeat;*/
 	/* background-color: #009688; */
 	background-image:url('http://localhost/myBoard/assets/image/monument-valley.jpg');
 	/* background: linear-gradient(var(--a, 100deg), #0ef49b, #d2dc69 30%, #faa04b 70%, #ff5a64); */

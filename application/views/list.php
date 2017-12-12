@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style_modal.css">
 	</head>
 	
-	<body >
+	<body>
 	<!-- List of Cards -->
 	<h2 id="board_name"><?= $board_name->board_name?></h2>
 	<div class="container-card" id="card-height">

@@ -1,6 +1,7 @@
 .bg-board {
 	background-color:#FFDC89;
 	background-image: url(../../assets/image/monument-valley.jpg);
+	background-size: cover;
 }
 
 .alamat {
