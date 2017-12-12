@@ -9,25 +9,25 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap/bootstrap-grid.min.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome-4/css/font-awesome.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style_index.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style_board.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style_modal.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style_board.css">
 </head>
 
-<body style="background-color:#FFDC89;background-image: url(http://localhost/myBoard/assets/image/monument-valley.jpg)">
+<body class="bg-board">
 	<div class="board-height">
-		<div style="color: black">
+		<div>
 			<center>
-				<h3 style="color:white">
+				<h3>
 					Your Boards
 				</h3>
 			</center>
 		</div>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12 box-shadow" style="margin: 20;">
+				<div class="box-shadow">
 					<?php foreach ($dataBoard as $row) {
 						?> 
-						<div class="col-md-4 box" style="margin: 5px">
+						<div class="col-md-4 box">
 						<a href="<?php echo base_url('main_controller/boardList/'.$row->id) ?>">
 							<span class="board_name"><?php echo $row->board_name ?></span>
 						</a>
@@ -47,7 +47,7 @@
 						</div>
 					</a> -->
 					<a id="myBtn" href="#">
-						<div class="col-md-4 box" id="new_board" style="margin: 5px">
+						<div class="col-md-4 box" id="new_board">
 							New Board..
 						</div>
 					</a>
@@ -62,7 +62,7 @@
 			<span class="close">&times;</span>
 			<div class="modal-header">
 				<h3>Create new Board</h3>
-				<form style="color: black;" action="<?php echo base_url('main_controller/createBoard')?>" method="POST">
+				<form class="modal-form" action="<?php echo base_url('main_controller/createBoard')?>" method="POST">
 					<input type="text" name="boardName" placeholder="Board Name"> <br>
 					<textarea name="boardDesc" id="" cols="22" rows="3" placeholder="Description"></textarea> <br>
 					<input type="submit" value="Submit">
@@ -79,7 +79,7 @@
 			<span class="close">&times;</span>
 			<div class="modal-header">
 				<h3>Change Board</h3>
-				<form style="color: black;" method="POST" action="<?= base_url('main_controller/updateBoard')?>">
+				<form class="modal-form" method="POST" action="<?= base_url('main_controller/updateBoard')?>">
 					<label for="name" class="modal_label">Name</label> <br>
 					<input type="text" id="board_input" name="boardName" value=""> <br>
 					<label for="desc" class="modal_label">Description</label> <br>
@@ -93,8 +93,6 @@
 			</div>
 		</div>
 	</div> 
-
-
 	<script>
 		function init_delete_btn() {
 			$('.btn-delete').click(function() {
