@@ -80,6 +80,17 @@ li:hover {
 	
 }
 
+.btn-login > input {
+    display: inline-block;
+	width: 100%;
+}
+
+.btn-login > button {
+	display: inline-block;
+	width: 100%;
+}
+
+
 .active {
     background-color: #E0F2F1;
 }

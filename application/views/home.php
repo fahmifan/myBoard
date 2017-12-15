@@ -18,7 +18,7 @@
 			<h1>Welcome to myBoard</h1>
 			<div class="login-form">
 				<?php echo form_open('main_controller/login'); ?>	
-					<table>
+					<!-- <table>
 						<tr>
 							<td>
 								<labe>Username</labe>
@@ -35,7 +35,11 @@
 								<input type="Password" name="password" placeholder=" e.g. myPrivate" >	
 							</td>
 						</tr>
-					</table>
+					</table> -->
+					<labe>Username</labe> <br>
+					<input type="Text" name="username" placeholder=" e.g. myUname" size="35"> <br> <br>
+					<labe>Password</labe> <br>
+					<input type="Password" name="password" placeholder=" e.g. myPrivate" size="35"> <br> <br>
 					<div class="btn-login">
 						<input type="submit" name="login" value="Login">
 					</div>

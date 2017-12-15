@@ -62,8 +62,19 @@ li:hover {
 	position: relative;
 	width: 100%;
 	size: 70px;
-	margin-top: 5px; 
+	margin-top: 5px;
+	border-radius: 5px; 
 	
+}
+
+.btn-login input {
+    display: inline-block;
+	width: 100%;
+}
+
+.btn-login button {
+	display: inline-block;
+	width: 100%;
 }
 
 .active {
