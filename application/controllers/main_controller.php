@@ -40,9 +40,12 @@ class Main_controller extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 
-		$this->form_validation->set_rules('username', 'Username', 'required');
-		$this->form_validation->set_rules('password', 'Password', 'required');
-
+		$this->form_validation->set_rules('username', 'Username', 'required', 
+								array('required' => 'Required Username')
+							);
+		$this->form_validation->set_rules('password', 'Password', 'required',
+								array('required' => 'Required Password')
+							);
 		if($this->form_validation->run() === FALSE ) {
 			$this->data['error'] = "";			
 			$this->load->view('header');
@@ -127,7 +130,7 @@ class Main_controller extends CI_Controller {
 
 	        $this->load->view('templates/header_home_signup');
 	        $this->load->view('signup');
-	        $this->load->view('footer');
+	        // $this->load->view('footer');
 	    
 	    } else {
 
@@ -135,7 +138,7 @@ class Main_controller extends CI_Controller {
    			$this->data['error'] = "*You can login now";
 			$this->load->view('header');
 			$this->load->view('home', $this->data);
-			$this->load->view('footer');
+			// $this->load->view('footer');
 			return;
 		}
 	}

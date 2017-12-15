@@ -18,28 +18,10 @@
 			<h1>Welcome to myBoard</h1>
 			<div class="login-form">
 				<?php echo form_open('main_controller/login'); ?>	
-					<!-- <table>
-						<tr>
-							<td>
-								<labe>Username</labe>
-							</td>
-							<td>
-								<input type="Text" name="username" placeholder=" e.g. myUname" >
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<labe>Password</labe> 
-							</td>
-							<td>
-								<input type="Password" name="password" placeholder=" e.g. myPrivate" >	
-							</td>
-						</tr>
-					</table> -->
-					<labe>Username</labe> <br>
-					<input type="Text" name="username" placeholder=" e.g. myUname" size="35"> <br> <br>
-					<labe>Password</labe> <br>
-					<input type="Password" name="password" placeholder=" e.g. myPrivate" size="35"> <br> <br>
+					<labe>Username</labe> <?php echo form_error('username', '<div class="error">', '</div>')?>
+					<input type="Text" name="username" placeholder=" e.g. myUname" size="35" value="<?= set_value('username')?>"> <br> <br>
+					<labe>Password</labe> <?php echo form_error('password', '<div class="error">', '</div>')?>
+					<input type="Password" name="password" placeholder=" e.g. myPrivate" size="35" > <br> <br>
 					<div class="btn-login">
 						<input type="submit" name="login" value="Login">
 					</div>
@@ -49,8 +31,7 @@
 				</div>
 			</div>
 			<br>
-			<center><?php echo validation_errors();  ?></center>
-			<center><?php echo $error;  ?></center>
+			<center class="error"><?php echo $error;  ?></center>
 	</div> <!-- end login -->
 	<div class="text-container">
 		<div class="bg-image" style="background-image: url(<?php echo base_url(); ?>assets/image/home-image-v2.jpg);"> <!-- Background Image -->
