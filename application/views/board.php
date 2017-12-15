@@ -41,11 +41,6 @@
 						</div>
 						<?php
 					} ?>
-					<!-- <a href="<?php //echo base_url('index.php/main_controller/boardList')?>">
-						<div class="col-md-4 box" style="margin: 5px">
-							Board1
-						</div>
-					</a> -->
 					<a id="myBtn" href="#">
 						<div class="col-md-4 box" id="new_board" style="margin: 5px">
 							New Board..
@@ -65,10 +60,8 @@
 				<form style="color: black;" action="<?php echo base_url('main_controller/createBoard')?>" method="POST">
 					<input type="text" name="boardName" placeholder="Board Name"> <br>
 					<textarea name="boardDesc" id="" cols="22" rows="3" placeholder="Description"></textarea> <br>
-					<input type="submit" value="Submit">
+					<input type="submit" class="submit-button" value="Submit"> <br> <br>
 				</form>
-			</div>
-			<div class="modal-footer">
 			</div>
 		</div>
 	</div>
@@ -85,7 +78,7 @@
 					<label for="desc" class="modal_label">Description</label> <br>
 					<textarea name="boardDesc" id="board_input_desc" cols="22" rows="3" placeholder="Description"></textarea> <br>
 					<input type="hidden" name="id-board" id="id_board">
-					<button type="submit" value="" id="submit_update" data-id="">Update</button>
+					<button type="submit" value="" class="submit-button" id="submit_update" data-id="">Update</button>
 					<br> <br>	
 				</form>
 			</div>
