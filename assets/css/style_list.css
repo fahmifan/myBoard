@@ -181,6 +181,7 @@ body {
 	background-repeat: no-repeat;
 	/* background-color: #009688; */
 	background-image:url('http://localhost/myBoard/assets/image/monument-valley.jpg');
+	background-repeat: round;
 	/* background: linear-gradient(var(--a, 100deg), #0ef49b, #d2dc69 30%, #faa04b 70%, #ff5a64); */
 }
 

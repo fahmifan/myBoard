@@ -13,7 +13,10 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style_modal.css">
 </head>
 
-<body style="background-color:#FFDC89;background-image: url(http://localhost/myBoard/assets/image/monument-valley.jpg)">
+<body style="
+	background: #ECE9E6;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */	;background-image: url(http://localhost/myBoard/assets/image/monument-valley.jpg)">
 	<div class="board-height">
 		<div style="color: black">
 			<center>
