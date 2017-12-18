@@ -13,6 +13,19 @@
 </head>
 <body>
 	<?php $this->load->library('form_validation') ?>
+	<div class="text-container">
+		<div class="bg-image" style="background-image: url(<?php echo base_url(); ?>assets/image/home-image-v2.jpg);"> <!-- Background Image -->
+			<div class="text-jumbo">
+				<p class="text-jumbo">Lets you work more <br>
+				collaboratively and get more done.</p>
+			</div>
+			<div class="text-desc">
+				<p>myBoard's boards, lists, and cards enable you to organize and prioritize <br>
+				your projects in a fun, flexible and rewarding way.</p><br>
+				
+			</div>
+		</div> <!-- end Bg-Image -->
+	</div>
 
 	<div class="login"> <!-- Login -->
 			<h1>Welcome to myBoard</h1>
@@ -33,16 +46,3 @@
 			<br>
 			<center class="error"><?php echo $error;  ?></center>
 	</div> <!-- end login -->
-	<div class="text-container">
-		<div class="bg-image" style="background-image: url(<?php echo base_url(); ?>assets/image/home-image-v2.jpg);"> <!-- Background Image -->
-			<div class="text-jumbo">
-				<p class="text-jumbo">Lets you work more <br>
-				collaboratively and get more done.</p>
-			</div>
-			<div class="text-desc">
-				<p>myBoard's boards, lists, and cards enable you to organize and prioritize <br>
-				your projects in a fun, flexible and rewarding way.</p><br>
-				
-			</div>
-		</div> <!-- end Bg-Image -->
-	</div>

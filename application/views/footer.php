@@ -17,7 +17,8 @@
 						Address<br/>
 						Bandung Sumedang Avenue KM.21,<br/>
 						Hegarmanah, Jatinangor, Sumedang District,<br/>
-						Jawa Barat 45363
+						Jawa Barat 45363<br>
+						<a href="https://github.com/fahmifan/myBoard">myBoard on Github</a>
 					</p>
 				</center>
 			</div>			
